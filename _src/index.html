@@ -23,29 +23,75 @@
   <link href="/css/style.css" rel="stylesheet">
 </head>
 
-<body class="page-body">
-  <header class="header" id="header">
-    <div class="header__inner container">
-      <a class="header__logo logo" href="/index.html"></a>
-      <nav class="header__nav nav-top" id="header-nav">
-        <ul class="nav-top__list"></ul>
-      </nav><a class="header__link header__link--open" href="#header__nav"><span class="header__link-text">Открыть меню</span></a><a class="header__link header__link--close hidden-link" href="#header__nav"><span class="header__link-text">Закрыть меню</span></a>
-    </div>
-  </header>
-  <main class="page-main">
-    <h1 class="page-main__title">Информирование о поступающих оплатах</h1>
-    <section class="promo">
-      <div class="promo__inner container">
-        <h2 class="promo__title">Наши приемущества</h2>
+<body class="page">
+  <div class="page__wrapper">
+    <header class="head-page">
+      <div class="head-page__top">
+        <div class="container head-page__container_top">
+          <div class="row">
+            <nav class="nav-menu">
+              <ul class="nav-menu__list">
+                <li class="nav-menu__item"><a class="nav-menu__link" href="buy">Как купить</a>
+                </li>
+                <li class="nav-menu__item"><a class="nav-menu__link" href="delivery">Доставка</a>
+                </li>
+                <li class="nav-menu__item"><a class="nav-menu__link" href="Installation">Установка</a>
+                </li>
+                <li class="nav-menu__item"><a class="nav-menu__link" href="our">Наши работы</a>
+                </li>
+                <li class="nav-menu__item"><a class="nav-menu__link" href="feedback">Отзывы</a>
+                </li>
+                <li class="nav-menu__item"><a class="nav-menu__link" href="action">Акции</a>
+                </li>
+                <li class="nav-menu__item"><a class="nav-menu__link" href="dealers">Дилерам</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="socials head-page__socials">
+              <h4 class="socials__label">Мы в соц.сетях:</h4>
+              <ul class="socials__list">
+                <li class="socials__item">
+                  <a class="socials__link socials__link_ok" href="#"></a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link_fb" href="#"></a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link_vk" href="#"></a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link_insta" href="#"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
-  <footer class="main-footer">
-    <div class="main-footer__inner container">
-      <p class="main-footer__copy">© 2020, Everypay</p><a class="main-footer__politic hover-opacity" href="/politic.html">Политика конфиденциальности</a>
-    </div>
-  </footer>
-  <script src="/js/script.js" type="module"></script>
+      <div class="head-page__bottom">
+        <div class="container">
+          <div class="row head-page__row">
+            <a class="logo-wrapp-link head-page__logo" href="/">
+              <img class="logo" src="./img/logo.png" alt="Логотип Ладвкпм" width="168" height="75">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="page-main">
+      <h1 class="page-main__title">Информирование о поступающих оплатах</h1>
+      <section class="promo">
+        <div class="promo__inner container">
+          <h2 class="promo__title">Наши приемущества</h2>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="main-footer__inner container">
+        <p class="main-footer__copy">© 2020, Everypay</p><a class="main-footer__politic hover-opacity" href="/politic.html">Политика конфиденциальности</a>
+      </div>
+    </footer>
+    <script src="/js/script.js" type="module"></script>
+  </div>
 </body>
 
 </html>

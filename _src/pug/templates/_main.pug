@@ -3,28 +3,29 @@ html(lang="ru")
 
   include ../modules/_head
 
-  body.page-body
-    include ../helpers/arrays
-    include ../modules/_header
+  body.page
+    .page__wrapper
+      include ../helpers/arrays
+      include ../modules/_header
 
 
 
 
 
 
-    main.page-main
-      block content
+      main.page-main
+        block content
 
 
-    include ../modules/_footer
+      include ../modules/_footer
 
-    //- if modal_request
-      //- include ../modules/_modal-request
-      //- include ../modules/_modal-thanks
+      //- if modal_request
+        //- include ../modules/_modal-request
+        //- include ../modules/_modal-thanks
 
 
 
-      //- include ../modules/_modal-request
-      //- include ../modules/_modal-thanks
-      //- include ../modules/_modal-case
-    include ../modules/_scripts
+        //- include ../modules/_modal-request
+        //- include ../modules/_modal-thanks
+        //- include ../modules/_modal-case
+      include ../modules/_scripts

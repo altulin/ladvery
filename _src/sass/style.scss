@@ -1,8 +1,12 @@
 // Helpers
 @import "./helpers/_variables";
 @import "./helpers/_mixins";
-@import "./helpers/_font";
-@import "./helpers/_global";
+// @import "./helpers/_font";
+// @import "./helpers/_global";
 
 // Critical style
-@import "./blocks/**/*";
+// @import "./blocks/**/*";
+
+@import "./blocks/main";
+@import "./blocks/media";
+@import "./blocks/header";

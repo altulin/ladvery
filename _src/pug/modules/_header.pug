@@ -1,20 +1,33 @@
-header.header#header
-  .header__inner.container
-    a.header__logo.logo(href="/index.html")
-      //- +img-retina(`logo`, `png`, `логотип`, `logo__img`, `130`, `20`)
+header.head-page
+  .head-page__top
+    .container.head-page__container_top
+      .row
+        //- Begin nav-menu
+        nav.nav-menu
+          ul.nav-menu__list
+            each item in nav_menu
+              li.nav-menu__item
+                a.nav-menu__link(href=`${item[1]}`)= item[0]
 
-    nav.header__nav.nav-top#header-nav
-      ul.nav-top__list
-        //- each item in header_nav
-          li.nav-top__item.nav-top__item--top
-            a.nav-top__link.nav-top__link--top(href=`${item[1]}`)= `${item[0]}`
+        //- Begin socials
+        .socials.head-page__socials
+          h4.socials__label Мы в соц.сетях:
 
+          ul.socials__list
+              li.socials__item
+                a.socials__link.socials__link_ok(href='#')
 
+              li.socials__item
+                a.socials__link.socials__link_fb(href='#')
 
-    a.header__link.header__link--open(href="#header__nav")
-      span.header__link-text Открыть меню
-      //- +svg_my(`menu-open`, `header__link-icon-open`)
+              li.socials__item
+                a.socials__link.socials__link_vk(href='#')
 
-    a.header__link.header__link--close.hidden-link(href="#header__nav")
-      span.header__link-text Закрыть меню
-      //- +svg_my(`menu-open`, `header__link-icon-close`)
+              li.socials__item
+                a.socials__link.socials__link_insta(href='#')
+
+  .head-page__bottom
+    .container
+      .row.head-page__row
+        a.logo-wrapp-link.head-page__logo(href="/")
+          img.logo(src="./img/logo.png" alt="Логотип Ладвкпм" width="168" height="75")

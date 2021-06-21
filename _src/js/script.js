@@ -86,38 +86,11 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
+// import addEventResize from "./modules/resize";
 
-// CONCATENATED MODULE: ./_src/js/modules/resize.js
-let resizeTimeout;
-
-const actualResizeHandler = () => {
-  //
-};
-
-const resizeThrottler = () => {
-  if (!resizeTimeout) {
-    resizeTimeout = setTimeout(function () {
-      resizeTimeout = null;
-      actualResizeHandler();
-    }, 1000);
-  }
-};
-
-const addEventResize = () => {
-  return window.addEventListener("resize", resizeThrottler, false);
-};
-
-/* harmony default export */ var resize = (addEventResize);
-
-// CONCATENATED MODULE: ./_src/js/main.js
-
-
-resize();
+// addEventResize();
 
 
 /***/ })
