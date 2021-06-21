@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  @include font(AvenirNextCyr);
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  line-height: 1.2;
+  color: $text;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+fieldset,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+input,
+button,
+select,
+a,
+textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+button,
+input,
+a {
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  border: none;
+  padding: 0;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gap;
+  padding-left: $gap;
+  max-width: $width + $gap * 2;
+
+  @include mw($tb) {
+    padding-right: $gap-tablet;
+    padding-left: $gap-tablet;
+  }
+
+  @include mw($ph) {
+    padding-right: $gap-phone;
+    padding-left: $gap-phone;
+  }
+}
+
+.hover-opacity {
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.tablet-visibility {
+  display: none;
+
+  @include mw($tb) {
+    display: block;
+  }
+}
+
+.tablet-hidden {
+  @include mw($tb) {
+    display: none;
+  }
+}
+
+.phone-visibility {
+  display: none;
+
+  @include mw($ph) {
+    display: block;
+  }
+}
+
+.phone-hidden {
+  @include mw($ph) {
+    display: none;
+  }
+}
+
+// * {
+//   outline: 1px solid #ff6347;
+// }

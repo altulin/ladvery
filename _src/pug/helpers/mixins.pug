@@ -1,0 +1,40 @@
+//- svg sprite
+mixin svg_my(id, className)
+  svg(class=`${className}`)
+    use(xlink:href=`/img/sprite.svg#${id}`)
+
+mixin svg(name, size, fill)
+  - var size = size || 24;
+  - var sprite = "/img/sprite.svg"
+  - var prefix = ""
+
+  span.icon(aria-hidden="true")&attributes(attributes)
+      svg(viewBox='0 0 ' + size + ' ' + size width=size height=size fill=fill)
+          use(xlink:href= sprite + '#' + name)
+
+//- img webp +img(``, ``, ``, ``, ``, ``)
+mixin img(name, type, alt, className, width, height)
+  //- picture
+    //- source(srcset=`/img/webp/${name}.webp` type=`image/webp`)
+  img(class=`${className}` src=`/img/${name}.${type}` alt=alt width=width height=height loading="lazy")
+
+//- +img-retina(``, ``, ``, ``, ``, ``)
+mixin img-retina(name, type, alt, className, width, height)
+  //- picture
+    //- source(srcset=`/img/webp/${name}.webp` type=`image/webp`)
+  img(class=`${className}` src=`/img/${name}.${type}` srcset=`/img/${name}.${type} 1x, /img/${name}@2x.${type} 2x` alt=alt width=width height=height loading="lazy")
+
+
+//- +img-svg(``, ``, ``, ``, ``, ``)
+mixin img-svg(name, className, alt, width, height)
+  img(class=`${className}` src=`/img/svg/${name}.svg` alt=alt width=width height=height loading="lazy")
+
+  //- picture
+    source(media="(max-width: 600px)" srcset="/img/novelty.jpg 1x, /img/novelty@2x.jpg 2x")
+    img.card__img(src="/img/new-year.jpg" srcset="/img/new-year.jpg 1x, /img/new-year@2x.jpg 2x" loading="lazy" alt="праздник" width="680" height="260")
+
+//- +mw(1270)
+    font-size: calc(22px + 20 * (100vw / 1270))
+
+//- +mw(768)
+  font-size: calc(22px + (20 + 20 * 0.7) * ((100vw - 320px) / 1270))

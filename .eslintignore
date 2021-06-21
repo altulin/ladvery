@@ -1,0 +1,6 @@
+node_modules
+/.vscode
+/.git
+/_src/js/script.js
+/_src/js/script.min.js
+/*_dist/

@@ -1,0 +1,69 @@
+// visually-hidden
+@mixin vh() {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: none;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+@function rem($size) {
+  @return ($size / 16) + rem;
+}
+
+// Media mixin
+@mixin mw($width) {
+  // @media screen and (max-width: $width + "px")
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+// Font mixin
+@mixin font-load($name, $size, $weight, $style) {
+  @font-face {
+    src: url("/fonts/" + $name + "-" + $size + ".woff2") format("woff2");
+    src: url("/fonts/" + $name + "-" + $size + ".woff") format("woff");
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin font($name) {
+  font-family: $name, "Arial", sans-serif;
+}
+
+// Position mixin
+@mixin centered($axis: "both") {
+  position: absolute;
+
+  @if $axis == "both" {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == "x" {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == "y" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// hover
+@mixin hover() {
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

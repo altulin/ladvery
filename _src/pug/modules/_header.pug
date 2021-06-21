@@ -1,0 +1,20 @@
+header.header#header
+  .header__inner.container
+    a.header__logo.logo(href="/index.html")
+      //- +img-retina(`logo`, `png`, `логотип`, `logo__img`, `130`, `20`)
+
+    nav.header__nav.nav-top#header-nav
+      ul.nav-top__list
+        //- each item in header_nav
+          li.nav-top__item.nav-top__item--top
+            a.nav-top__link.nav-top__link--top(href=`${item[1]}`)= `${item[0]}`
+
+
+
+    a.header__link.header__link--open(href="#header__nav")
+      span.header__link-text Открыть меню
+      //- +svg_my(`menu-open`, `header__link-icon-open`)
+
+    a.header__link.header__link--close.hidden-link(href="#header__nav")
+      span.header__link-text Закрыть меню
+      //- +svg_my(`menu-open`, `header__link-icon-close`)
