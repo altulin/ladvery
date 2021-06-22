@@ -1,22 +1,23 @@
 nav.other-nav
   .container.other-nav__container
     .row.other-nav__row
-      //- .other-nav__poiner
-        h1.other-nav__title Межкомнатные <br>двери
-          svg.icon.other-nav__arrow(width="68" height="8" viewBox="0 0 68 8")
-            use(xlink:href="img/sprite.svg#icon-arrow-long")
 
       ul.other-nav__list
         each item, i in other_nav
           li.other-nav__item
             a.other-nav__link(href="#")
-              if i===5
-                svg.icon.other-nav__icon.other-nav__icon--proc(width=`${item[2]}` height=`${item[3]}` viewBox=`0 0 ${item[2]} ${item[3]}`)
-                  use(xlink:href=`img/sprite.svg#${item[1]}`)
+              if i === 5
+                span.other-nav__link-inner.other-nav__link-inner--proc
+                  svg.icon.other-nav__icon.other-nav__icon--proc(width=`${item[2]}` height=`${item[3]}` viewBox=`0 0 ${item[2]} ${item[3]}`)
+                    use(xlink:href=`img/sprite.svg#${item[1]}`)
+                  span.other-nav__link-bg.other-nav__link-bg--proc
 
-              else if i===6
-                svg.icon.other-nav__icon.other-nav__icon--bag(width=`${item[2]}` height=`${item[3]}` viewBox=`0 0 ${item[2]} ${item[3]}`)
-                  use(xlink:href=`img/sprite.svg#${item[1]}`)
+              else if i === 6
+                span.other-nav__link-inner.other-nav__link-inner--proc
+                  svg.icon.other-nav__icon.other-nav__icon--bag(width=`${item[2]}` height=`${item[3]}` viewBox=`0 0 ${item[2]} ${item[3]}`)
+                    use(xlink:href=`img/sprite.svg#${item[1]}`)
+                  span.other-nav__link-bg.other-nav__link-bg--bag 3
+
 
               else
                 svg.icon.other-nav__icon(width=`${item[2]}` height=`${item[3]}` viewBox=`0 0 ${item[2]} ${item[3]}`)

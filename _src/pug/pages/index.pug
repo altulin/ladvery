@@ -2,8 +2,62 @@ extends ../templates/_main.pug
 include ../helpers/mixins.pug
 
 block content
-  //- h1.page-main__title Информирование о поступающих оплатах
 
-  //- section.promo
-  //-   .promo__inner.container
-      //- h2.promo__title Наши приемущества
+  section.promo
+    .container
+      .banner.promo__banner
+        .banner__text.banner__text_left
+          span купи две
+        img.banner__img(src="/img/svg/summ.svg" alt="1 + 1 = 3" width="367" height="106")
+        .banner__text.banner__text_right
+          span получи три
+      .promo__action
+        button.btn-gradient.promo__btn(type="button") Подробнее
+        p.promo__desc-action Подробности уточняйте у <br>менеджеров на точках продаж
+      img.promo__img(src="/img/promo-door.png" srcset="/img/promo-door_x2.png" width="674" height="448" alt="Двери Ладверим")
+
+  //- section.about
+    .container
+      h2.display.display_size_big.about__title Почему нужно покупать <br>двери у нас?
+
+      .about__advantages.swiper-container
+        ul.swiper-wrapper
+
+  section.about
+    .container
+      h2.display.display_size_big.about__title Почему нужно покупать <br> двери у нас?
+
+      .about__advantages.swiper-container
+        ul.swiper-wrapper
+          li.swiper-slide
+            span.numeric-card.numeric-card_fill.about__numeric-card.numeric-card_border-rarius_left
+              span.numeric-card__thumb.numeric-card__thumb_200
+              span.numeric-card__desc
+                p Всегда свыше 200 моделей <br> в наличии и более 1000 <br> под заказ
+
+              span.numeric-card__number 01
+
+            li.swiper-slide
+              span.numeric-card.numeric-card_fill.about__numeric-card
+                span.numeric-card__thumb.numeric-card__thumb_10years
+                span.numeric-card__desc
+                  p Более 10 лет <br>  опыта и свыше 20 <br> тыс.довольных клиентов
+
+                span.numeric-card__number 02
+
+            li.swiper-slide
+              span.numeric-card.numeric-card_fill.about__numeric-card
+                span.numeric-card__thumb.numeric-card__thumb_warrnty
+                span.numeric-card__desc
+                  p Гарантия на <br> изделия и установку <br> до 5 лет
+
+                span.numeric-card__number 03
+
+            li.swiper-slide
+              span.numeric-card.numeric-card_fill.about__numeric-card.numeric-card_border-rarius_right
+                span.numeric-card__thumb.numeric-card__thumb_noun-sale
+                span.numeric-card__desc
+                  p Всегда гибкая система <br> цен: акции, рассрочка, <br> кредит и двери в <br> подарок
+
+                span.numeric-card__number 04
+      .slider-pagination.about__pagination

@@ -1,13 +1,4 @@
 .other-nav {
-  &__container {
-  }
-
-  &__row {
-  }
-
-  &__list {
-  }
-
   &__item {
     border-bottom: 1px solid #e2e2e2;
     border-right: 1px solid #e2e2e2;
@@ -20,16 +11,46 @@
   &__link {
     padding-top: 20px;
     padding-bottom: 23px;
+    position: relative;
 
     &:hover {
       .other-nav__label {
         color: #f24a41;
       }
     }
-  }
 
-  &__icon {
-    margin-bottom: 14px;
+    &-inner {
+      position: relative;
+    }
+
+    &-bg {
+      position: absolute;
+      background-repeat: no-repeat;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &--proc {
+        display: block;
+        width: 20px;
+        height: 28px;
+        background-image: url(/img/svg/proc.svg);
+      }
+
+      &--bag {
+        top: 56%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: #ee2318;
+        font-size: 12px;
+        font-weight: 500;
+        color: $white;
+      }
+    }
   }
 
   &__label {
@@ -38,20 +59,20 @@
     line-height: 18px;
     color: #2f2f2f;
     transition: 0.3s ease;
+    margin-top: 14px;
   }
 }
 
 .other-nav .other-nav__item svg.other-nav__icon--bag {
   fill: transparent;
   stroke: $black;
+  transition: 0.3s ease;
 
   &:hover {
     stroke: #f24a41;
   }
 }
-.container {
-}
-.row {
-}
-.icon {
+
+.other-nav__item .other-nav__link:hover .other-nav__icon--bag {
+  stroke: #f24a41;
 }
