@@ -10,7 +10,7 @@ const assemblyBabel = false; // babel true or false
 
 const plugunsJsUsed = [`mmenu_js`, `myJsLibs`, `myJsFile`];
 const plugunsCssUsed = [
-  `normalize_css`,
+  // `normalize_css`,
   // `mmenu_css`,
   // `swiper_css`,
   `myCssLibs`,

@@ -1,0 +1,57 @@
+.other-nav {
+  &__container {
+  }
+
+  &__row {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    border-bottom: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+
+    &:first-child {
+      border-left: 1px solid #e2e2e2;
+    }
+  }
+
+  &__link {
+    padding-top: 20px;
+    padding-bottom: 23px;
+
+    &:hover {
+      .other-nav__label {
+        color: #f24a41;
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 14px;
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #2f2f2f;
+    transition: 0.3s ease;
+  }
+}
+
+.other-nav .other-nav__item svg.other-nav__icon--bag {
+  fill: transparent;
+  stroke: $black;
+
+  &:hover {
+    stroke: #f24a41;
+  }
+}
+.container {
+}
+.row {
+}
+.icon {
+}

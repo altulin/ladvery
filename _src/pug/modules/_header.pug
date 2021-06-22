@@ -30,4 +30,65 @@ header.head-page
     .container
       .row.head-page__row
         a.logo-wrapp-link.head-page__logo(href="/")
-          img.logo(src="./img/logo.png" alt="Логотип Ладвкпм" width="168" height="75")
+          img.logo(src="./img/svg/logo.svg" alt="Логотип Ладвкпм" width="168" height="75")
+
+        ul.contacts.row.head-page__contacts
+          li.contacts__item
+            a.contact(href="#")
+              svg.icon.contact__icon.contact__icon_black(width="50" height="50" viewBox="0 0 50 50")
+                use(xlink:href="img/sprite.svg#icon-route")
+              span.contact__text
+                p.contact__desc Более 15 магазинов <br>в Иркутске и Ангарске
+                span.contact__label Где купить?
+
+          li.contacts__item
+            a.contact(href="tel:+73952348064")
+              svg.icon.contact__icon.contact__icon_black(width="48" height="49" viewBox="0 0 48 49")
+                use(xlink:href="img/sprite.svg#icon-telemarketer")
+              span.contact__text
+                p.contact__desc Единый телефон
+                  strong.phone (3952) 34-80-64
+                span.contact__label Перезвоните мне
+
+          li.contacts__item
+            a.contact(href="#")
+              svg.icon.contact__icon.contact__icon_black(width="64" height="47" viewBox="0 0 64 47")
+                use(xlink:href="img/sprite.svg#icon-surface")
+              span.contact__text
+                p.contact__desc
+                  strong.phone Вызвать замерщика
+                  span всего за 250 руб.
+                span.contact__label Вызвать
+
+        a.head-page__modile-phone(href="+73952348064")
+          svg.icon(width="25" height="25" viewBox="0 0 1792 1792")
+            use(xlink:href="img/sprite.svg#icon-phone")
+
+        a.head-page__modile-geo.js-go-to(href="#location")
+          svg.icon(width="35" height="35" viewBox="0 0 50 50")
+            use(xlink:href="img/sprite.svg#icon-geo")
+
+        button.burger.head-page__burger.js-burger
+          span.burger__line
+
+nav.mobile-nav.js-mobile-nav
+  ul.mobile-nav__list
+    each item in nav_menu
+      li.mobile-nav__item
+        a.mobile-nav__link(href=`${item[1]}`)= item[0]
+
+  .socials.mobile-nav__socials
+    ul.socials__list
+      li.socials__item
+        a.socials__link.socials__link_ok(href='#')
+
+      li.socials__item
+        a.socials__link.socials__link_fb(href='#')
+
+      li.socials__item
+        a.socials__link.socials__link_vk(href='#')
+
+      li.socials__item
+        a.socials__link.socials__link_insta(href='#')
+
+  button.mobile-nav__close.js-close-mobile-nav
