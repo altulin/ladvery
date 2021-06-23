@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     myMap.behaviors.disable("scrollZoom");
 
 
-    addressLinks.forEach(function (item, index) {
+    addressLinks.forEach(function (item) {
       const coords = item.dataset.coord.split(",");
 
       const placemark = new ymaps.Placemark(
