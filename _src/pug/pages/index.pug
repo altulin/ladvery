@@ -1,7 +1,10 @@
 extends ../templates/_main.pug
 include ../helpers/mixins.pug
 
+
+
 block content
+
 
   section.promo
     .container
@@ -15,13 +18,6 @@ block content
         button.btn-gradient.promo__btn(type="button") Подробнее
         p.promo__desc-action Подробности уточняйте у <br>менеджеров на точках продаж
       img.promo__img(src="/img/promo-door.png" srcset="/img/promo-door_x2.png" width="674" height="448" alt="Двери Ладверим")
-
-  //- section.about
-    .container
-      h2.display.display_size_big.about__title Почему нужно покупать <br>двери у нас?
-
-      .about__advantages.swiper-container
-        ul.swiper-wrapper
 
   section.about
     .container
@@ -61,3 +57,254 @@ block content
 
                 span.numeric-card__number 04
       .slider-pagination.about__pagination
+
+  section.sale
+    .container.sale__container
+      h2.display.display_size_big.display_center.sale__title Распродажа по крайне выгодным ценам
+
+      .sale__content
+        .sale__caorusel.swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              article.sale-card
+                img.sale-card__thumb(src='img/ds1.jpg' width='93' height='195' alt='Дверь Агата')
+                span.sale-card__text
+                  .sale-card__head
+                    h3.sale-card__title
+                      a(href='#') Агата
+                    span.sale-card__desc
+                      p Тон 30 Шоколад шпон ясень
+
+                    span.sale-card__info 2000*800 мм :
+                      span.sale-card__value 2 шт
+                  span.sale-card__action
+                    span.sale-card__price
+                      span.sale-card__price-before 6500 руб.
+
+                      span.sale-card__price-after 2600 руб.
+
+                    a.btn-fill(href='#') Забронировать
+
+            .swiper-slide
+              article.sale-card
+                img.sale-card__thumb(src='img/ds2.jpg' width='93' height='195' alt='Дверь Агата')
+                span.sale-card__text
+                  .sale-card__head
+                    h3.sale-card__title
+                      a(href='#') Базиликата 2
+                    span.sale-card__desc
+                      p Тон 30 Шоколад шпон ясень
+
+                    span.sale-card__info 2000*800 мм :
+                      span.sale-card__value 2 шт
+                  span.sale-card__action
+                    span.sale-card__price
+                      span.sale-card__price-before 6500 руб.
+
+                      span.sale-card__price-after 12600 руб.
+
+                    a.btn-fill(href='#') Забронировать
+
+            .swiper-slide
+              article.sale-card
+                img.sale-card__thumb(src='img/ds3.jpg' width='93' height='195' alt='Дверь Агата')
+                span.sale-card__text
+                  .sale-card__head
+                    h3.sale-card__title
+                      a(href='#') Двупольная раздвижная система
+                    span.sale-card__desc
+                      p Анегри
+
+                    span.sale-card__info 2000*800 мм :
+                      span.sale-card__value 2 шт
+                  span.sale-card__action
+                    span.sale-card__price
+                      span.sale-card__price-before 6500 руб.
+
+                      span.sale-card__price-after 2600 руб.
+
+                    a.btn-fill(href='#') Забронировать
+
+            .swiper-slide
+              article.sale-card
+                img.sale-card__thumb(src='img/ds1.jpg' width='93' height='195' alt='Дверь Агата')
+                span.sale-card__text
+                  .sale-card__head
+                    h3.sale-card__title
+                      a(href='#') Агата
+                    span.sale-card__desc
+                      p Тон 30 Шоколад шпон ясень
+
+                    span.sale-card__info 2000*800 мм :
+                      span.sale-card__value 2 шт
+                  span.sale-card__action
+                    span.sale-card__price
+                      span.sale-card__price-before 6500 руб.
+
+                      span.sale-card__price-after 2600 руб.
+
+                    a.btn-fill(href='#') Забронировать
+
+        button.slider-control.slider-control_prev.sale__control.sale__control_prev
+          svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+            use(href='/img/sprite.svg#icon-arrow-left')
+
+        button.slider-control.slider-control_next.sale__control.sale__control_next
+          svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+            use(href='/img/sprite.svg#icon-arrow-right')
+
+        .slider-pagination.sale__pagination
+
+        a.btn-rect.sale__btn-rect(href) Перейти в каталог
+
+  section.start
+    .container
+      h2.display.display_size_big.display_center.start__title С чего начать?
+
+      .start__steps.swiper-container
+
+        ul.swiper-wrapper
+          li.swiper-slide
+            span.numeric-card.numeric-card_borderred.start__numeric-card
+              span.numeric-card__thumb.numeric-card__thumb_surface
+              span.numeric-card__desc
+                p Вызови замерщика, <br> чтобы безошибочно <br> подобрать изделие
+              button.btn-fill.numeric-card__btn Подробнее
+              span.numeric-card__number 01
+
+          li.swiper-slide
+            span.numeric-card.numeric-card_borderred.start__numeric-card
+              span.numeric-card__thumb.numeric-card__thumb_select-doors
+              span.numeric-card__desc
+                p Выбери дверь в каталоге <br> или в одном из наших <br> салонов
+
+              button.btn-fill.numeric-card__btn Подробнее
+              span.numeric-card__number 02
+
+          li.swiper-slide
+            span.numeric-card.numeric-card_borderred.start__numeric-card
+              span.numeric-card__thumb.numeric-card__thumb_ico
+              span.numeric-card__desc
+                p Бережно доставим дверь <br> со склада до вашего дома <br> в удобное вам время
+
+              button.btn-fill.numeric-card__btn Подробнее
+              span.numeric-card__number 03
+
+          li.swiper-slide
+            span.numeric-card.numeric-card_borderred.start__numeric-card
+              span.numeric-card__thumb.numeric-card__thumb_drel
+              span.numeric-card__desc
+                p Наши опытные мастера <br> аккуратно и быстро <br> установят двери
+
+              button.btn-fill.numeric-card__btn Подробнее
+              span.numeric-card__number 04
+      .slider-pagination.start__pagination
+
+  section.location#location
+    h2.display.display_size_big.display_center.location__title Где находятся наши салоны?
+
+    .location__map-wrapper
+      .container.location__container
+        .location__content
+          .address-card.location__address-card
+            .address-card__action
+              button.address-card__btn.address-card__btn_left.is-active.js-select-city(data-coord='52.278923,104.278767' data-city='city1') Иркутск
+
+              button.address-card__btn.address-card__btn_right.js-select-city(data-coord='52.544330,103.887660' data-city='city2') Ангарск
+
+            .address-card__content.js-address-content
+              .address-card__current-city.js-current-city ул. Баррикад, 53 <br> тeл.:
+                strong (3952) 34-80-64, 722-812
+
+              .address-card__list-wrapper.is-active.city1.js-address-list
+                ul.address-card__list-address
+
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.29537784, 104.306432432432') ул. Баррикад, 53 <br> тeл.:
+                      strong (3952) 34-80-64, 722-812
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.32968279, 104.23613950') ТЦ «Парус», Трактовая, 35 <br> тeл.:
+                      strong (3952) 722-817
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.32393729, 104.29502450') ТЦ «Покровский», пав. 161, ул. Челябинская, 27 <br> тeл.:
+                      strong (3952) 722-816
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.23356279, 104.30217450') ТЦ «Версаль», пав. 15/8, ул. Академическая, 31 <br> тeл.:
+                      strong (3952) 722-815
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.29535673, 104.29440635') ТЦ «Стройматериалы», пав. 225 <br> тeл.:
+                      strong (3952) 724-994
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.31732029, 104.23427150') Ул. Трактовая, 18/18а, <br> тeл.:
+                      strong (3952) 724-998
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.3983873, 104.3671') ТЦ "Город Мастеров", пав. 221 <br> тeл.:
+                      strong (3952) 722-813
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.29535673, 104.29440635') ТЦ "Стройматериалы", пристрой 1/3 <br> тeл.:
+                      strong (3952) 722-806
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.29535673, 104.29440635') ТЦ "Стройматериалы", пав. 50 <br> тeл.:
+                      strong (3952) 722-819
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.25539150, 104.333') Строймаркет "Дока", ул. Байкальская, 244а, 3 зтаж <br> тeл.:
+                    strong (3952) 722-814
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.26648145, 104.22198847') Ул.Сергеева, 3Б/1, ТЦ "Мега Хоум" пав.24 <br> тeл.:
+                      strong (3952)722-809
+
+              .address-card__list-wrapper.city2.js-address-list
+                ul.address-card__list-address
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.50723729, 103.85821850') 22 Микрорайон, д.13 Торговый Центр "Европейский" <br>тeл.:
+                      strong 8(908)778-49-02
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.54720771, 103.90160751') «ДСК», 124-й промквартал, 3, пав. 137 <br> тeл.:
+                      strong 8(904)123-56-68
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.54596467, 103.91324318') База «Сатурн», 125-промквартал, 1 ст., Желтые павильоны на выезде, ЦСМ, пав. 41 <br> тeл.:
+                      strong 8(950)1-334-919
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.54596467, 103.91324318') База «Сатурн», 125- промквартал, 1 ст., ЦСМ, пав. 32 <br>тeл.:
+                      strong 8(902)5-77-59-73
+                  li.address-card__item-address.js-address-item
+                    a.js-select-address(href='#' data-coord='52.54596467, 103.91324318') База «Сатурн», 125- промквартал, 1 ст., ЦСМ, пав. 3а <br> тeл.:
+                      strong 8(950)10-88-465)
+
+            button.show-more.address-card__show-more.js-show-more
+              span.show-more__more Ещё
+              span.show-more__value
+              svg.icon.show-more__arrow(width='20' height='20' viewBox='0 0 50 50')
+                use(href='img/sprite.svg#icon-arrow-show-more')
+      #map.location__map
+
+
+  section.other
+    .container.other__container
+      .row
+        .other__col.other__col_left
+          h2.display.display_size_middle.other__title.other__title_mb Почему нужно покупать <br> двери у нас?
+
+          .other__text
+            p Есть над чем задуматься: независимые государства набирают популярность среди определенных слоев населения, а значит, должны быть заблокированы в рамках своих собственных рациональных ограничений.
+
+              a(href='#') Имеется спорная точка зрения,
+              | гласящая примерно следующее: независимые государства объективно рассмотрены соответствующими инстанциями.
+
+            br
+
+            p Как уже неоднократно упомянуто, некоторые особенности внутренней политики являются только методом политического участия и объективно рассмотрены соответствующими инстанциями.
+
+          button.btn-fill Подробнее
+
+        .other__col.other__col_right
+          h2.display.display_size_middle.other__title Специальные акции от <br> банков-партнеров
+
+          .other__specials
+            a.other__special(href='#')
+              img.other__img(src='img/percent.png' alt='0%' width='204' height='153')
+              .other__special-desc Двери в рассрочку без <br> процентов и переплат
+
+            a.other__special(href='#')
+              img.other__img(src='img/card.png' alt='Карта Халва' width='202' height='132')
+              .other__special-desc Принимаем к оплате <br> карту Халва

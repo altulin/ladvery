@@ -1,1 +1,73 @@
-//-
+footer.foot-page
+  .foot-page__top
+    .container
+      .row.foot-page__row
+        a.logo-wrapp-link.foot-page__logo(href='/')
+          img.logo(src='img/svg/logo-footer.svg' alt='Логотип Ладвкпм' width='195' height='86')
+        nav.site-map.foot-page__site-map
+          ul.site-map__list
+            li.site-map__item
+              a.site-map__link(href='#') Межкомнатные двери
+
+            li.site-map__item
+              a.site-map__link(href='#') Входные двери
+
+            li.site-map__item
+              a.site-map__link(href='#') Перегородки
+
+            li.site-map__item
+              a.site-map__link(href='#') Раздвижные двери
+
+        nav.site-map.foot-page__site-map.foot-page__site-map_ml
+          ul.site-map__list
+            li.site-map__item
+              a.site-map__link(href='#') Как купить
+
+            li.site-map__item
+              a.site-map__link(href='#') Адреса салонов
+
+            li.site-map__item
+              a.site-map__link(href='#') Распродажа
+
+            li.site-map__item
+              a.site-map__link(href='#') Акции
+
+
+        ul.contacts.foot-page__contacts
+          li.contacts__item
+
+            a.contact(href='tel:+73952348064')
+              svg.icon.contact__icon.contact__icon_white(width='56' height='55' viewBox='0 0 48 49')
+                use(href='img/sprite.svg#icon-telemarketer').
+
+
+              span.contact__text
+                p.contact__desc Единый телефон
+                  strong.phone (3952) 34-80-64
+                span.contact__label Перезвоните мне
+
+
+          li.contacts__item
+
+            a.contact(href='#')
+              svg.icon.contact__icon.contact__icon_white(width='57' height='46' viewBox='0 0 64 47')
+                use(href='img/sprite.svg#icon-surface').
+
+
+              span.contact__text
+                p.contact__desc
+                  strong Вызвать замерщика <br>всего за 250 руб.
+
+                span.contact__label.
+
+                  Вызвать
+
+
+  .foot-page__bottom
+    .container
+      .row.foot-page__bottom-row
+        .copy Ладвери&nbsp;
+          span(data-actual-year) 2021
+          | &nbsp;(c)
+
+        a.policy.foot-page__policy(href='#') Политика конфеденциальности

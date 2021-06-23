@@ -1,14 +1,14 @@
 import pluginsObject from "./plugins.js";
 
-const projectName = `empty`; // название проекта
+const projectName = `doors`; // название проекта
 const distFolder = `${projectName}_dist`; // Папка продакшн
 const srcFolder = `_src`; // Папка разработки
 
 const mode = pluginsObject.minimist(process.argv.slice(2))._[0];
-const assemblyWebpack = true; // webpack true or false
+const assemblyWebpack = false; // webpack true or false
 const assemblyBabel = false; // babel true or false
 
-const plugunsJsUsed = [`mmenu_js`, `myJsLibs`, `myJsFile`];
+const plugunsJsUsed = [`swiper_js`, `myJsFile`];
 const plugunsCssUsed = [
   // `normalize_css`,
   // `mmenu_css`,

@@ -1245,7 +1245,7 @@ li {
 /*---Begin start---*/
 .start {
   padding: 70px 0;
-  background-image: url(../img/static/start-bg.jpg);
+  background-image: url(../img/start-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff; }
@@ -1710,7 +1710,10 @@ li {
     margin-left: 30px; }
   .foot-page__contacts {
     padding: 0 0 0 20px;
-    margin-left: 0; } }
+    margin-left: 0; }
+  .head-page__row {
+    padding-top: 5px;
+    padding-left: 5px; } }
 
 @media screen and (max-width: 770px) {
   .display_size_big {
@@ -1875,7 +1878,8 @@ li {
         -ms-flex-align: center;
             align-items: center; }
   .sale__control {
-    z-index: 10; }
+    z-index: 10;
+    top: 40%; }
   .sale__control_next {
     right: 10px; }
   .sale__control_prev {
