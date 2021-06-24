@@ -1,0 +1,309 @@
+.catalog {
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__row {
+    &--left {
+      width: 232px;
+    }
+
+    &--right {
+      width: 100%;
+      max-width: 807px;
+    }
+  }
+}
+.container {
+}
+.display {
+}
+.display_size_big {
+}
+.filter {
+  &__list {
+  }
+
+  &__item {
+    & + li {
+      margin-top: 50px;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #16192c;
+    margin-bottom: 20px;
+  }
+
+  &__sublist {
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    @include vh();
+
+    &:checked + .filter__label-after {
+      background-color: rgba(#f24a41, 1);
+    }
+
+    &:checked + .filter__label-after::after {
+      border-color: rgba(#ffffff, 1);
+    }
+
+    &:not(:checked):hover + .filter__label-after::after {
+      border-color: rgba(#7d7d7d, 1);
+    }
+
+    &:not(:checked):focus + .filter__label-after::after {
+      border-color: rgba(#7d7d7d, 1);
+    }
+  }
+
+  &__label-after {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    margin-right: 10px;
+    transition: $transition;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 4px;
+      height: 8px;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      border: 2px solid rgba(#7d7d7d, 0);
+      border-top: none;
+      border-left: none;
+      transition: $transition;
+    }
+  }
+
+  &__label-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #16192c;
+  }
+}
+.type {
+  &__list {
+  }
+
+  &__item {
+    & + li {
+      margin-top: 16px;
+    }
+  }
+}
+.price {
+  &__range {
+  }
+}
+.price-range {
+  &__label {
+  }
+
+  &__input {
+  }
+
+  &__box {
+  }
+}
+.js-price-range {
+}
+.input-group {
+  &__label {
+    &--from {
+    }
+
+    &--to {
+    }
+  }
+
+  &__input {
+  }
+
+  &__from {
+  }
+
+  &__to {
+  }
+}
+.toggles {
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__title {
+  }
+
+  &__label {
+  }
+
+  &__input {
+  }
+
+  &__slider {
+  }
+}
+.color {
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__label {
+    &--white {
+    }
+
+    &--royal-blue {
+    }
+
+    &--snow-flurry {
+    }
+  }
+
+  &__input {
+  }
+}
+.make {
+  &__list {
+  }
+
+  &__item {
+    & + li {
+      margin-top: 16px;
+    }
+  }
+}
+.products {
+  &__top {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &--new {
+    }
+  }
+
+  &__bottom {
+  }
+}
+.info {
+  &__box {
+  }
+
+  &__num {
+  }
+
+  &__filter {
+  }
+}
+.info_text {
+}
+.info-filter {
+  &__select {
+  }
+
+  &__option {
+  }
+}
+.sale-card {
+  &__thumb {
+  }
+
+  &__text {
+  }
+
+  &__head {
+  }
+
+  &__title {
+  }
+
+  &__desc {
+  }
+
+  &__info {
+  }
+
+  &__value {
+  }
+
+  &__action {
+  }
+
+  &__price {
+  }
+
+  &__price-before {
+  }
+
+  &__price-after {
+  }
+
+  &__colors {
+  }
+
+  &__colors-item {
+  }
+
+  &__colors-label {
+  }
+
+  &__colors-input {
+  }
+}
+.btn-fill {
+}
+.pagination {
+  &__list {
+  }
+
+  &__item {
+    &--prev {
+    }
+
+    &--disabled {
+    }
+
+    &--next {
+    }
+  }
+
+  &__link {
+  }
+}
+.analytics {
+  &__text {
+  }
+
+  &__viewed {
+  }
+
+  &__total {
+  }
+}

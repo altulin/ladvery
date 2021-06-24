@@ -1,0 +1,45 @@
+.breadcrumbs {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    & + li {
+      margin-left: 5px;
+      position: relative;
+
+      &::before {
+        content: "/";
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $gray;
+        font-size: 12px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__link {
+    color: $gray;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      color: rgba($gray, 0.6);
+    }
+
+    &--current {
+      &:hover {
+        color: rgba($gray, 1);
+      }
+    }
+  }
+}

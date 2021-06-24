@@ -8,7 +8,13 @@ const mode = pluginsObject.minimist(process.argv.slice(2))._[0];
 const assemblyWebpack = false; // webpack true or false
 const assemblyBabel = false; // babel true or false
 
-const plugunsJsUsed = [`swiper_js`, `myJsFile`];
+const plugunsJsUsed = [
+  `swiper_js`,
+  `jquery_js`,
+  `rangeSlider_js`,
+  `myJsLibs`,
+  `myJsFile`,
+];
 const plugunsCssUsed = [
   // `normalize_css`,
   // `mmenu_css`,
@@ -36,6 +42,7 @@ const plugunsJs = new Map([
   [`myJsLibs`, `${srcFolder}/js/libs/**/*.js`], // мои библиотеки js
   [`swiper_js`, `node_modules/swiper/swiper-bundle.min.js`],
   [`micromodal_js`, `node_modules/micromodal/dist/micromodal.min.js`],
+  [`rangeSlider_js`, `node_modules/ion-rangeslider/js/ion.rangeSlider.min.js`],
 ]);
 
 const plugunsCss = new Map([

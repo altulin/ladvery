@@ -1,9 +1,9 @@
 doctype html
 html(lang="ru")
-  block var
+
   include ../modules/_head
 
-  body.page(class= (cover ? 'page--cover': '') )
+  body.page
     .page__wrapper
       include ../helpers/arrays
       include ../modules/_header
@@ -30,4 +30,4 @@ html(lang="ru")
       //- include ../modules/_modal-case
 
 
-      include ../modules/_scripts
+      include ../modules/_scripts_map

@@ -65,6 +65,8 @@
   },
   "dependencies": {
     "gulp-sass-glob": "^1.1.0",
+    "ion-rangeslider": "^2.3.1",
+    "jquery": "^3.6.0",
     "minimist": "^1.2.5",
     "swiper": "^6.6.1"
   }
