@@ -36,7 +36,7 @@ block content
                     span.filter__label-text Складные
 
             li.filter__item.price
-              h3.filter__title Цена
+              h3.filter__title.price__title Цена
 
               .price__range.price-range
               label.price-range__label
@@ -44,10 +44,10 @@ block content
 
               .price-range__box.input-group
                 label.input-group__label.input-group__label--from
-                  input.input-group__input.input-group__from(type="text")
+                  input.input-group__input.input-group__from(type="text" placeholder="от 0 ₽" readonly)
 
                 label.input-group__label.input-group__label--to
-                  input.input-group__input.input-group__to(type="text")
+                  input.input-group__input.input-group__to(type="text" placeholder="до 10000 ₽" readonly)
 
             li.filter__item.toggles
               ul.toggles__list
@@ -55,23 +55,26 @@ block content
                   h4.filter__title.toggles__title
                   label.toggles__label
                     input.toggles__input(type="checkbox" name="toggles" value="toggles-in-stock")
-                    span.toggles__slider В наличии
+                    span.toggles__slider
+                    span.toggles__text В наличии
 
                 li.toggles__item
                   h4.filter__title.toggles__title
                   label.toggles__label
                     input.toggles__input(type="checkbox" name="toggles" value="toggles-new")
-                    span.toggles__slider  Новинки
+                    span.toggles__slider
+                    span.toggles__text  Новинки
 
                 li.toggles__item
                   h4.filter__title.toggles__title
                   label.toggles__label
                     input.toggles__input(type="checkbox" name="toggles" value="toggles-sale")
-                    span.toggles__slider Распродажа
+                    span.toggles__slider
+                    span.toggles__text Распродажа
 
 
             li.filter__item.color
-              h3.filter__title
+              h3.filter__title.color__title Цвет
               ul.color__list
                 each item in colors
                   li.color__item
@@ -136,7 +139,7 @@ block content
         .catalog__row.catalog__row--right.products
           .products__top.info
             .info__box
-              p.info_text Найдено
+              p.info__text Найдено
                 span.info__num 109
                 | товаров
 
@@ -161,15 +164,22 @@ block content
                       span.sale-card__desc
                         p Тон 30 Шоколад шпон ясень
 
-                      span.sale-card__info 2000*800 мм :
+                      //- span.sale-card__info 2000*800 мм :
                         span.sale-card__value 2 шт
                     span.sale-card__action
                       span.sale-card__price
-                        span.sale-card__price-before 6500 руб.
+                        span.sale-card__box
+                          span.sale-card__price-before 6500 руб.
+                          if n===2
+                            span.sale-card__presence.sale-card__presence--no под заказ
+                          else if n===3
+                            span.sale-card__presence.sale-card__presence--few мало на складе
+                          else
+                            span.sale-card__presence.sale-card__presence--yes в наличии
 
                         span.sale-card__price-after 2600 руб.
 
-                      a.btn-fill(href='#') Забронировать
+                      //- a.btn-fill(href='#') Заказ в 1 клик
 
                   ul.sale-card__colors
                     li.sale-card__colors-item
@@ -181,6 +191,10 @@ block content
                     li.sale-card__colors-item
                       label.sale-card__colors-label(style="background-color: #FF3232;" data-image='img/ds2.jpg')
                         input.sale-card__colors-input(type="text")
+
+                  .sale-card__wrap-link
+                    a.btn-fill.sale-card__link(href='#') Заказ в 1 клик
+
             -n=0
           .products__bottom
             .pagination

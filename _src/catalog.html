@@ -23,7 +23,9 @@
   <link href="/css/style.css" rel="stylesheet">
 </head>
 
-<body class="page page--cover">
+<body class="page page--catalog"></body>
+
+<body class="page">
   <div class="page__wrapper">
     <header class="head-page">
       <div class="head-page__top">
@@ -249,17 +251,17 @@
                   </ul>
                 </li>
                 <li class="filter__item price">
-                  <h3 class="filter__title">Цена</h3>
+                  <h3 class="filter__title price__title">Цена</h3>
                   <div class="price__range price-range"></div>
                   <label class="price-range__label">
                     <input class="price-range__input js-price-range" type="text" name="price-range">
                   </label>
                   <div class="price-range__box input-group">
                     <label class="input-group__label input-group__label--from">
-                      <input class="input-group__input input-group__from" type="text">
+                      <input class="input-group__input input-group__from" type="text" placeholder="от 0 ₽" readonly>
                     </label>
                     <label class="input-group__label input-group__label--to">
-                      <input class="input-group__input input-group__to" type="text">
+                      <input class="input-group__input input-group__to" type="text" placeholder="до 10000 ₽" readonly>
                     </label>
                   </div>
                 </li>
@@ -268,26 +270,41 @@
                     <li class="toggles__item">
                       <h4 class="filter__title toggles__title"></h4>
                       <label class="toggles__label">
-                        <input class="toggles__input" type="checkbox" name="toggles" value="toggles-in-stock"><span class="toggles__slider">В наличии</span>
+                        <input class="toggles__input" type="checkbox" name="toggles" value="toggles-in-stock"><span class="toggles__slider"></span><span class="toggles__text">В наличии</span>
                       </label>
                     </li>
                     <li class="toggles__item">
                       <h4 class="filter__title toggles__title"></h4>
                       <label class="toggles__label">
-                        <input class="toggles__input" type="checkbox" name="toggles" value="toggles-new"><span class="toggles__slider"> Новинки</span>
+                        <input class="toggles__input" type="checkbox" name="toggles" value="toggles-new"><span class="toggles__slider"></span><span class="toggles__text"> Новинки</span>
                       </label>
                     </li>
                     <li class="toggles__item">
                       <h4 class="filter__title toggles__title"></h4>
                       <label class="toggles__label">
-                        <input class="toggles__input" type="checkbox" name="toggles" value="toggles-sale"><span class="toggles__slider">Распродажа</span>
+                        <input class="toggles__input" type="checkbox" name="toggles" value="toggles-sale"><span class="toggles__slider"></span><span class="toggles__text">Распродажа</span>
                       </label>
                     </li>
                   </ul>
                 </li>
                 <li class="filter__item color">
-                  <h3 class="filter__title"></h3>
+                  <h3 class="filter__title color__title">Цвет</h3>
                   <ul class="color__list">
+                    <li class="color__item">
+                      <label class="color__label color__label--white" title="белый">
+                        <input class="color__input" type="checkbox" name="color" value="white">
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label color__label--royal-blue" title="Королевский синий">
+                        <input class="color__input" type="checkbox" name="color" value="Royal Blue">
+                      </label>
+                    </li>
+                    <li class="color__item">
+                      <label class="color__label color__label--snow-flurry" title="Снежный шквал">
+                        <input class="color__input" type="checkbox" name="color" value="now Flurry">
+                      </label>
+                    </li>
                     <li class="color__item">
                       <label class="color__label color__label--white" title="белый">
                         <input class="color__input" type="checkbox" name="color" value="white">
@@ -365,7 +382,7 @@
             <div class="catalog__row catalog__row--right products">
               <div class="products__top info">
                 <div class="info__box">
-                  <p class="info_text">Найдено<span class="info__num">109</span>товаров</p>
+                  <p class="info__text">Найдено<span class="info__num">109</span>товаров</p>
                 </div>
                 <label class="info__filter info-filter">
                   <select class="info-filter__select">
@@ -382,8 +399,8 @@
                     <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-            </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+            </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
             </span>
             </span>
             <ul class="sale-card__colors">
@@ -403,6 +420,8 @@
                 </label>
               </li>
             </ul>
+            <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+            </div>
             </article>
             </li>
             <li class="products__item products__item--new">
@@ -410,8 +429,8 @@
                 <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-          </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+          </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--no">под заказ</span></span><span class="sale-card__price-after">2600 руб.</span></span>
           </span>
           </span>
           <ul class="sale-card__colors">
@@ -431,6 +450,8 @@
               </label>
             </li>
           </ul>
+          <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+          </div>
           </article>
           </li>
           <li class="products__item">
@@ -438,8 +459,8 @@
               <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-        </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+        </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--few">мало на складе</span></span><span class="sale-card__price-after">2600 руб.</span></span>
         </span>
         </span>
         <ul class="sale-card__colors">
@@ -459,6 +480,8 @@
             </label>
           </li>
         </ul>
+        <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+        </div>
         </article>
         </li>
         <li class="products__item">
@@ -466,8 +489,8 @@
             <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-  </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+  </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
   </span>
   </span>
   <ul class="sale-card__colors">
@@ -487,6 +510,8 @@
       </label>
     </li>
   </ul>
+  <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+  </div>
   </article>
   </li>
   <li class="products__item">
@@ -494,8 +519,8 @@
       <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
       </span>
       </span>
       <ul class="sale-card__colors">
@@ -515,6 +540,8 @@
           </label>
         </li>
       </ul>
+      <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+      </div>
     </article>
   </li>
   <li class="products__item">
@@ -522,8 +549,8 @@
       <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
       </span>
       </span>
       <ul class="sale-card__colors">
@@ -543,6 +570,8 @@
           </label>
         </li>
       </ul>
+      <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+      </div>
     </article>
   </li>
   <li class="products__item">
@@ -550,8 +579,8 @@
       <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
       </span>
       </span>
       <ul class="sale-card__colors">
@@ -571,6 +600,8 @@
           </label>
         </li>
       </ul>
+      <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+      </div>
     </article>
   </li>
   <li class="products__item">
@@ -578,8 +609,8 @@
       <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
       </span>
       </span>
       <ul class="sale-card__colors">
@@ -599,6 +630,8 @@
           </label>
         </li>
       </ul>
+      <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+      </div>
     </article>
   </li>
   <li class="products__item">
@@ -606,8 +639,8 @@
       <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
       </span>
       </span>
       <ul class="sale-card__colors">
@@ -627,6 +660,8 @@
           </label>
         </li>
       </ul>
+      <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+      </div>
     </article>
   </li>
   <li class="products__item">
@@ -634,8 +669,8 @@
       <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
       </span>
       </span>
       <ul class="sale-card__colors">
@@ -655,6 +690,8 @@
           </label>
         </li>
       </ul>
+      <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+      </div>
     </article>
   </li>
   <li class="products__item">
@@ -662,8 +699,8 @@
       <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
       </span>
       </span>
       <ul class="sale-card__colors">
@@ -683,6 +720,8 @@
           </label>
         </li>
       </ul>
+      <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+      </div>
     </article>
   </li>
   <li class="products__item">
@@ -690,8 +729,8 @@
       <img class="sale-card__thumb" src="img/ds1.jpg" width="93" height="195" alt="Дверь Агата"><span class="sale-card__text">
                         <div class="sale-card__head">
                           <h3 class="sale-card__title"><a href="#">Агата</a></h3><span class="sale-card__desc">
-                            <p>Тон 30 Шоколад шпон ясень</p></span><span class="sale-card__info">2000*800 мм :<span class="sale-card__value">2 шт</span></span>
-      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__price-after">2600 руб.</span></span><a class="btn-fill" href="#">Забронировать</a>
+                            <p>Тон 30 Шоколад шпон ясень</p></span>
+      </div><span class="sale-card__action"><span class="sale-card__price"><span class="sale-card__box"><span class="sale-card__price-before">6500 руб.</span><span class="sale-card__presence sale-card__presence--yes">в наличии</span></span><span class="sale-card__price-after">2600 руб.</span></span>
       </span>
       </span>
       <ul class="sale-card__colors">
@@ -711,6 +750,8 @@
           </label>
         </li>
       </ul>
+      <div class="sale-card__wrap-link"><a class="btn-fill sale-card__link" href="#">Заказ в 1 клик</a>
+      </div>
     </article>
   </li>
   </ul>

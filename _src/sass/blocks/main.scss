@@ -240,8 +240,30 @@ body {
   font-family: "Geometria", sans-serif;
   font-weight: 500;
   line-height: 1.3em;
-  // background: #f7f8f8;
   background: $white;
+}
+
+.page {
+  &--catalog {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#383e45, 0);
+      left: 0;
+      top: 0;
+      transition: $transition;
+      pointer-events: none;
+    }
+  }
+  &--cover {
+    &::after {
+      background-color: rgba(#383e45, 0.3);
+    }
+  }
 }
 
 li {

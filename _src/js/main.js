@@ -224,17 +224,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // js-price-range
   if (document.querySelector(".js-price-range")) {
+    const changeRange = (data) => {
+      const dataTo = data.to;
+      const dataFrom = data.from;
+
+      $(".input-group__from").val(`от ${dataFrom} ₽`);
+      $(".input-group__to").val(`до ${dataTo} ₽`);
+    };
+
     $(".js-price-range").ionRangeSlider({
       type: "double",
       min: 0,
-      max: 1000,
-      from: 200,
-      to: 500,
+      max: 30000,
+      from: 0,
+      to: 10000,
       grid: true,
+      onChange(data) {
+        changeRange(data);
+      },
     });
   }
 
-  if (document.querySelector(".info-filter")) {
-    $(".info-filter__select").heapbox();
+  if (document.querySelector(".info-filter__select")) {
+    $(".info-filter__select").heapbox({
+      type: "double",
+      min: 0,
+      max: 1000,
+      from: 0,
+      to: 500,
+      effect: {
+        speed: "fast",
+      },
+    });
+  }
+
+  $("body").addClass("body--cover");
+
+  if (document.querySelector(".products__list")) {
+    const bodyCover = $("body.page");
+
+    $(".products__item").on("mouseenter", () => {
+      bodyCover.addClass("page--cover");
+    });
+    $(".products__item").on("mouseleave", () => {
+      bodyCover.removeClass("page--cover");
+    });
   }
 });

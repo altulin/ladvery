@@ -3,7 +3,8 @@ html(lang="ru")
   block var
   include ../modules/_head
 
-  body.page(class= (cover ? 'page--cover': '') )
+  body.page(class= (cover ? 'page--catalog': '') )
+  body.page
     .page__wrapper
       include ../helpers/arrays
       include ../modules/_header
