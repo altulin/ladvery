@@ -16,8 +16,8 @@
 
 // Media mixin
 @mixin mw($width) {
-  // @media screen and (max-width: $width + "px")
-  @media screen and (max-width: $width) {
+  @media screen and (max-width: $width + "px") {
+    // @media screen and (max-width: $width) {
     @content;
   }
 }
@@ -59,11 +59,22 @@
   }
 }
 
-// hover
-@mixin hover() {
-  transition: 0.2s;
-
-  &:hover {
-    opacity: 0.7;
+// hover + focus
+@mixin hocus($pseudo: "none") {
+  @if $pseudo == "after" {
+    &:hover::after,
+    &:focus::after {
+      @content;
+    }
+  } @else if $pseudo == "before" {
+    &:hover::after,
+    &:focus::after {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:focus {
+      @content;
+    }
   }
 }

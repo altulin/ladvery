@@ -258,15 +258,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  $("body").addClass("body--cover");
-
-  if (document.querySelector(".products__list")) {
+  if (document.querySelector(".page--catalog .products__list")) {
     const bodyCover = $("body.page");
 
     $(".products__item").on("mouseenter", () => {
       bodyCover.addClass("page--cover");
     });
+
     $(".products__item").on("mouseleave", () => {
+      bodyCover.removeClass("page--cover");
+    });
+
+    $(".sale-card__link").on("click", () => {
+      $("#modal-order").modal({
+        fadeDuration: 100,
+      });
+      return false;
+    });
+
+    $("#modal-order").on($.modal.BEFORE_OPEN, () => {
       bodyCover.removeClass("page--cover");
     });
   }

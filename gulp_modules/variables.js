@@ -12,6 +12,7 @@ const plugunsJsUsed = [
   `swiper_js`,
   `jquery_js`,
   `rangeSlider_js`,
+  `jquery_modal_js`,
   `myJsLibs`,
   `myJsFile`,
 ];
@@ -19,6 +20,7 @@ const plugunsCssUsed = [
   // `normalize_css`,
   // `mmenu_css`,
   // `swiper_css`,
+  `jquery_modal_css`,
   `myCssLibs`,
   `myCssFile`,
 ];

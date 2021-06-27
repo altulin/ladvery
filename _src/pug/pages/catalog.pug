@@ -164,8 +164,6 @@ block content
                       span.sale-card__desc
                         p Тон 30 Шоколад шпон ясень
 
-                      //- span.sale-card__info 2000*800 мм :
-                        span.sale-card__value 2 шт
                     span.sale-card__action
                       span.sale-card__price
                         span.sale-card__box
@@ -179,43 +177,48 @@ block content
 
                         span.sale-card__price-after 2600 руб.
 
-                      //- a.btn-fill(href='#') Заказ в 1 клик
-
                   ul.sale-card__colors
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #0A0A0A;" data-image='img/ds2.jpg')
+                      label.sale-card__colors-label(style="background-color: #0A0A0A;" data-image='img/ds2.jpg' tabindex="0")
                         input.sale-card__colors-input(type="text")
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #E8F7C8;" data-image='img/ds1.jpg')
+                      label.sale-card__colors-label(style="background-color: #E8F7C8;" data-image='img/ds1.jpg' tabindex="0")
                         input.sale-card__colors-input(type="text")
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #FF3232;" data-image='img/ds2.jpg')
+                      label.sale-card__colors-label(style="background-color: #FF3232;" data-image='img/ds2.jpg' tabindex="0")
                         input.sale-card__colors-input(type="text")
 
                   .sale-card__wrap-link
-                    a.btn-fill.sale-card__link(href='#') Заказ в 1 клик
+                    a.btn-fill.sale-card__link(href='#modal-order' rel="modal:open" data-modal="#modal-order") Заказ в 1 клик
 
             -n=0
           .products__bottom
             .pagination
               ul.pagination__list
-                li.pagination__item.pagination__item--prev.pagination__item--disabled
+                li.pagination__item.pagination__item--prev.pagination__item--control.pagination__item--disabled
                   a.pagination__link(href="#") Назад
 
                   while n<5
                     -n++
-                    li.pagination__item.pagination__item
-                      a.pagination__link(href="#")= n
+                    li.pagination__item.pagination__item.pagination__item--number
+                      if n===1
+                        a.pagination__link.pagination__link--active(href="#")= n
+
+                      else
+                        a.pagination__link(href="#")= n
 
                   -n=0
 
-                li.pagination__item.pagination__item--next
+                li.pagination__item.pagination__item--next.pagination__item--control
                   a.pagination__link(href="#") Вперед
 
 
             .analytics
-              p.analytics__text Вы посмотрели
-                span.analytics__viewed 48
-                |из
-                span.analytics__total 1250
+              p.analytics__text Вы посмотрели&ensp;
+                span.analytics__viewed 48&ensp;
+                |из&ensp;
+                span.analytics__total 1250&ensp;
                 |товаров
+
+
+  section.modal.modal--order#modal-order

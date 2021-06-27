@@ -255,8 +255,9 @@ body {
       background-color: rgba(#383e45, 0);
       left: 0;
       top: 0;
-      transition: $transition;
+      transition: 0.5s;
       pointer-events: none;
+      z-index: 1;
     }
   }
   &--cover {
@@ -1130,6 +1131,7 @@ li {
 }
 
 .sale-card__title a {
+  transition: $transition;
   color: #000;
 }
 
