@@ -13,6 +13,7 @@ const plugunsJsUsed = [
   `jquery_js`,
   `rangeSlider_js`,
   `jquery_modal_js`,
+  `tabby_js`,
   `myJsLibs`,
   `myJsFile`,
 ];
@@ -45,6 +46,7 @@ const plugunsJs = new Map([
   [`swiper_js`, `node_modules/swiper/swiper-bundle.min.js`],
   [`micromodal_js`, `node_modules/micromodal/dist/micromodal.min.js`],
   [`rangeSlider_js`, `node_modules/ion-rangeslider/js/ion.rangeSlider.min.js`],
+  [`tabby_js`, `node_modules/tabbyjs/dist/js/tabby.polyfills.min.js`],
 ]);
 
 const plugunsCss = new Map([

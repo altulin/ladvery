@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  const windowWidth = window.innerWidth < 770;
+  const windowWidth = window.innerWidth < 768;
 
   // Map address
 
@@ -247,21 +247,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (document.querySelector(".info-filter__select")) {
     $(".info-filter__select").heapbox({
-      type: "double",
-      min: 0,
-      max: 1000,
-      from: 0,
-      to: 500,
       effect: {
         speed: "fast",
       },
     });
   }
 
-  if (document.querySelector(".page--catalog .products__list")) {
+  if (
+    document.querySelector(".page--catalog .products__list") &&
+    !windowWidth
+  ) {
     const bodyCover = $("body.page");
 
-    $(".products__item").on("mouseenter", () => {
+    $(".products__item").on("mouseenter", (e) => {
       bodyCover.addClass("page--cover");
     });
 
@@ -279,5 +277,31 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#modal-order").on($.modal.BEFORE_OPEN, () => {
       bodyCover.removeClass("page--cover");
     });
+  }
+
+  if (document.querySelector(".sale-card__colors-label")) {
+    $(".sale-card__colors-label").on("click", (e) => {
+      if ($(e.target).is(".sale-card__colors-label")) {
+        const labelColor = $(e.target);
+        const newSrc = labelColor.attr("data-image");
+        const newColor = labelColor.attr("data-color");
+        const labelParent = labelColor.parents(".sale-card");
+
+        labelParent.find(".sale-card__thumb").attr("src", newSrc);
+        labelParent.find(".sale-card__desc p").text(newColor);
+      }
+    });
+  }
+
+  if (document.querySelector(".configuration-tabs__select")) {
+    $(".configuration-tabs__select").heapbox({
+      effect: {
+        speed: "fast",
+      },
+    });
+  }
+
+  if (document.querySelector(".configuration-tabs")) {
+    const tabConfiguration = new Tabby(".configuration-tabs");
   }
 });

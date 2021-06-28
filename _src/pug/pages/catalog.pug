@@ -52,21 +52,18 @@ block content
             li.filter__item.toggles
               ul.toggles__list
                 li.toggles__item
-                  h4.filter__title.toggles__title
                   label.toggles__label
                     input.toggles__input(type="checkbox" name="toggles" value="toggles-in-stock")
                     span.toggles__slider
                     span.toggles__text В наличии
 
                 li.toggles__item
-                  h4.filter__title.toggles__title
                   label.toggles__label
                     input.toggles__input(type="checkbox" name="toggles" value="toggles-new")
                     span.toggles__slider
                     span.toggles__text  Новинки
 
                 li.toggles__item
-                  h4.filter__title.toggles__title
                   label.toggles__label
                     input.toggles__input(type="checkbox" name="toggles" value="toggles-sale")
                     span.toggles__slider
@@ -179,13 +176,13 @@ block content
 
                   ul.sale-card__colors
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #0A0A0A;" data-image='img/ds2.jpg' tabindex="0")
+                      label.sale-card__colors-label(style="background-color: #0A0A0A;" data-image='img/ds2.jpg' data-color='Тон 10 Рустик шпон дуб' tabindex="0")
                         input.sale-card__colors-input(type="text")
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #E8F7C8;" data-image='img/ds1.jpg' tabindex="0")
+                      label.sale-card__colors-label(style="background-color: #E8F7C8;" data-image='img/ds1.jpg' data-color='Тон 30 Шоколад шпон ясень' tabindex="0")
                         input.sale-card__colors-input(type="text")
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #FF3232;" data-image='img/ds2.jpg' tabindex="0")
+                      label.sale-card__colors-label(style="background-color: #FF3232;" data-image='img/ds2.jpg' data-color='Тон 10 Рустик шпон дуб' tabindex="0")
                         input.sale-card__colors-input(type="text")
 
                   .sale-card__wrap-link
@@ -221,4 +218,72 @@ block content
                 |товаров
 
 
-  section.modal.modal--order#modal-order
+  section.modal.modal--order.modal-order#modal-order
+    .modal-order__inner.configuration
+      .configuration.configuration__col--left
+        h2.configuration__title.display.display_size_big Бристоль 1ПГ
+        p.configuration__head
+        form.configuration__form.configuration-form(action="#" method="post" name="modal-order-form")
+          .configuration-form__inner
+            ul.configuration-form__list.configuration-tabs
+              li.configuration-tabs__item
+                a.configuration-tabs__link(href="#tabs-configuration" data-tabby-default) Конфигуратор
+              li.configuration-tabs__item
+                a.configuration-tabs__link(href="#tabs-characteristic") Характеристики
+
+
+            .configuration-tabs__content#tabs-configuration
+              each item in configuration
+                label.configuration-tabs__label
+                  span.configuration-tabs__head= item[0]
+                  select.configuration-tabs__select(name=`configuration-${item[1]}`)
+
+                    if item[1] === 'color'
+                      option(value="")
+                        span.configuration-tabs__color(style="background-color: #0A0A0A;")
+                        span.configuration-tabs__text вариант 1
+                      option(value="")
+                        span.configuration-tabs__color(style="background-color: ##E8F7C8;")
+                        span.configuration-tabs__text вариант 2
+                      option(value="")
+                        span.configuration-tabs__color(style="background-color: #0A0A0A;")
+                        span.configuration-tabs__text вариант 3
+                    else
+                      option(value="") вариант 1
+                      option(value="") вариант 2
+                      option(value="") вариант 3
+
+
+
+            .configuration-tabs__content#tabs-characteristic.characteristic
+              ul.characteristic__list
+                each item in characteristic
+                  li.characteristic__item
+                    span.characteristic__term= item[0]
+                    span.characteristic__description= item[1]
+
+          .configuration-form__price.price-section
+            span.price-section__box
+              span.price-section__before 6500 руб.
+              span.price-section__presence.price-section__presence--yes в наличии
+
+
+            span.price-section__after 2600 руб.
+
+
+
+
+
+
+      .configuration__col.modal-order__vol--right.view
+        ul.view__list
+          li.view__item
+            a.view__link(href="#in-interior") В интерьере
+
+          li.view__item
+            a.view__link(href="#out-interior") Без интерьера
+
+        .view__in#in-interior
+
+
+        .view__out#out-interior
