@@ -779,10 +779,11 @@
   </section>
   <section class="modal modal--order modal-order" id="modal-order">
     <div class="modal-order__inner configuration">
-      <div class="configuration configuration__col--left">
+      <div class="configuration__col--left">
         <h2 class="configuration__title display display_size_big">Бристоль 1ПГ</h2>
-        <p class="configuration__head"></p>
-        <form class="configuration__form configuration-form" action="#" method="post" name="modal-order-form">
+        <p class="configuration__head">Укажите необходимые вам параметры
+          <br>и рассчитайте точную стоимость</p>
+        <form class="configuration__form configuration-form" id="configuration-form" action="#" method="post" name="modal-order-form">
           <div class="configuration-form__inner">
             <ul class="configuration-form__list configuration-tabs">
               <li class="configuration-tabs__item"><a class="configuration-tabs__link" href="#tabs-configuration" data-tabby-default>Конфигуратор</a>
@@ -865,19 +866,41 @@
               </ul>
             </div>
           </div>
+          <hr class="configuration-form__line">
           <div class="configuration-form__price price-section"><span class="price-section__box"><span class="price-section__before">6500 руб.</span><span class="price-section__presence price-section__presence--yes">в наличии</span></span><span class="price-section__after">2600 руб.</span>
           </div>
         </form>
       </div>
-      <div class="configuration__col modal-order__vol--right view">
+      <div class="configuration__col configuration__col--right view">
         <ul class="view__list">
           <li class="view__item"><a class="view__link" href="#in-interior">В интерьере</a>
           </li>
           <li class="view__item"><a class="view__link" href="#out-interior">Без интерьера</a>
           </li>
         </ul>
-        <div class="view__in" id="in-interior"></div>
-        <div class="view__out" id="out-interior"></div>
+        <div class="view__in" id="in-interior">
+          <div class="view__interior-main">
+            <figure class="view__img-door"></figure>
+          </div>
+          <div class="view__interiors preview">
+            <figure class="preview__img preview__img--1" role="button"></figure>
+            <figure class="preview__img preview__img--2" role="button"></figure>
+            <figure class="preview__img preview__img--3" role="button"></figure>
+            <figure class="preview__img preview__img--4" role="button"></figure>
+          </div>
+        </div>
+        <div class="view__out" id="out-interior">
+          <div class="view__interior-main">
+            <figure class="view__img-door"></figure>
+          </div>
+        </div>
+      </div>
+      <div class="configuration__click click">
+        <h3 class="click__title display display_size_big">заказ в 1 клик</h3>
+        <label class="click__label">
+          <input class="click__input" type="text" name="configuration-phone" form="configuration-form" required>
+        </label>
+        <button class="click__btn btn-fill" type="submit" form="configuration-form">Оформить заказ</button>
       </div>
     </div>
   </section>

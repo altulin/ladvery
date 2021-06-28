@@ -220,10 +220,12 @@ block content
 
   section.modal.modal--order.modal-order#modal-order
     .modal-order__inner.configuration
-      .configuration.configuration__col--left
+      .configuration__col--left
         h2.configuration__title.display.display_size_big Бристоль 1ПГ
-        p.configuration__head
-        form.configuration__form.configuration-form(action="#" method="post" name="modal-order-form")
+        p.configuration__head Укажите необходимые вам параметры
+          br
+          | и рассчитайте точную стоимость
+        form.configuration__form.configuration-form#configuration-form(action="#" method="post" name="modal-order-form")
           .configuration-form__inner
             ul.configuration-form__list.configuration-tabs
               li.configuration-tabs__item
@@ -261,6 +263,7 @@ block content
                   li.characteristic__item
                     span.characteristic__term= item[0]
                     span.characteristic__description= item[1]
+          hr.configuration-form__line
 
           .configuration-form__price.price-section
             span.price-section__box
@@ -275,7 +278,7 @@ block content
 
 
 
-      .configuration__col.modal-order__vol--right.view
+      .configuration__col.configuration__col--right.view
         ul.view__list
           li.view__item
             a.view__link(href="#in-interior") В интерьере
@@ -284,6 +287,27 @@ block content
             a.view__link(href="#out-interior") Без интерьера
 
         .view__in#in-interior
+          .view__interior-main
+            figure.view__img-door
+
+          .view__interiors.preview
+            figure.preview__img.preview__img--1(role="button")
+            figure.preview__img.preview__img--2(role="button")
+            figure.preview__img.preview__img--3(role="button")
+            figure.preview__img.preview__img--4(role="button")
+
+
+
+
 
 
         .view__out#out-interior
+          .view__interior-main
+            figure.view__img-door
+
+      .configuration__click.click
+        h3.click__title.display.display_size_big заказ в 1 клик
+        label.click__label
+          input.click__input(type="text" name="configuration-phone" form="configuration-form" required)
+
+        button.click__btn.btn-fill(type="submit" form="configuration-form") Оформить заказ
