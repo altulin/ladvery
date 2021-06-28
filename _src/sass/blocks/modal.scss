@@ -109,9 +109,126 @@
   }
 
   &__label {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    & + label {
+      margin-top: 10px;
+    }
+
+    & .heapBox {
+      flex-grow: 1;
+      max-width: 302px;
+      position: relative;
+
+      &.open {
+        & .holder {
+          border-radius: 5px 5px 0 0;
+        }
+      }
+    }
+
+    & .holder {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: -0.05em;
+      color: #424242;
+      text-decoration: none;
+      display: block;
+      padding-top: 22px;
+      padding-bottom: 22px;
+      padding-left: 20px;
+      border: 1px solid rgba(#8e9191, 0);
+      border-radius: 5px;
+      background-color: #f2f3f3;
+
+      @include hocus() {
+        border-color: rgba(#8e9191, 0.5);
+      }
+    }
+
+    & .handler {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-image: url(/img/svg/arr-select.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin-left: 11px;
+      position: absolute;
+      right: 20px;
+      top: 28px;
+      transition: $transition;
+    }
+
+    & .open .handler {
+      transform: rotate(180deg);
+    }
+
+    & .heap {
+      position: absolute;
+      top: 100%;
+      width: calc(100%);
+      left: 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-top: none;
+      background-color: #fff;
+      border-radius: 0 0 4px 4px;
+      z-index: 2;
+
+      & a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: #16192c;
+        text-decoration: none;
+        transition: $transition;
+        padding: 20px;
+        display: block;
+
+        @include hocus() {
+          color: #f24a41;
+        }
+      }
+    }
+
+    & .heapOption {
+      & + li {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &--color {
+      & .holder {
+        padding-left: 50px;
+      }
+
+      & .heap {
+        // & a {
+        //   padding-left: 50px;
+        //   position: relative;
+
+        //   &::after {
+        //     content: "";
+        //     position: absolute;
+        //     width: 20px;
+        //     height: 20px;
+        //     background-color: red;
+        //   }
+        // }
+      }
+    }
   }
 
   &__head {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.05em;
+    color: #b6b6b6;
   }
 
   &__select {

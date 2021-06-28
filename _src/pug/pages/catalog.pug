@@ -218,7 +218,9 @@ block content
                 |товаров
 
 
-  section.modal.modal--order.modal-order#modal-order
+
+
+  section.modal--order.modal-order#modal-order
     .modal-order__inner.configuration
       .configuration__col--left
         h2.configuration__title.display.display_size_big Бристоль 1ПГ
@@ -236,24 +238,28 @@ block content
 
             .configuration-tabs__content#tabs-configuration
               each item in configuration
-                label.configuration-tabs__label
+                label.configuration-tabs__label(class=(item[1] === 'color'?'configuration-tabs__label--color':''))
                   span.configuration-tabs__head= item[0]
                   select.configuration-tabs__select(name=`configuration-${item[1]}`)
 
+
                     if item[1] === 'color'
-                      option(value="")
-                        span.configuration-tabs__color(style="background-color: #0A0A0A;")
-                        span.configuration-tabs__text вариант 1
-                      option(value="")
-                        span.configuration-tabs__color(style="background-color: ##E8F7C8;")
-                        span.configuration-tabs__text вариант 2
-                      option(value="")
-                        span.configuration-tabs__color(style="background-color: #0A0A0A;")
-                        span.configuration-tabs__text вариант 3
+                      option.configuration-tabs__option-color(value="1") вариант 1
+                        //- span.configuration-tabs__color(style="background-color: #0A0A0A;")
+                        //- span.configuration-tabs__text вариант 1
+                      option.configuration-tabs__option-color(value="2") вариант 2
+                        //- span.configuration-tabs__color(style="background-color: ##E8F7C8;")
+                        //- span.configuration-tabs__text вариант 2
+                      option.configuration-tabs__option-color(value="3") вариант 3
+                        //- span.configuration-tabs__color(style="background-color: #0A0A0A;")
+                        //- span.configuration-tabs__text вариант 3
                     else
-                      option(value="") вариант 1
-                      option(value="") вариант 2
-                      option(value="") вариант 3
+
+                      option(value="1") вариант 1
+                      option(value="2") вариант 2
+                      option(value="3") вариант 3
+
+
 
 
 

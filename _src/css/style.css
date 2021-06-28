@@ -3032,6 +3032,96 @@ span {
     .configuration-tabs__link[aria-selected="true"]:hover, .configuration-tabs__link[aria-selected="true"]:focus {
       text-decoration: none; }
 
+.configuration-tabs__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .configuration-tabs__label + label {
+    margin-top: 10px; }
+  .configuration-tabs__label .heapBox {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    max-width: 302px;
+    position: relative; }
+    .configuration-tabs__label .heapBox.open .holder {
+      border-radius: 5px 5px 0 0; }
+  .configuration-tabs__label .holder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.05em;
+    color: #424242;
+    text-decoration: none;
+    display: block;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 20px;
+    border: 1px solid rgba(142, 145, 145, 0);
+    border-radius: 5px;
+    background-color: #f2f3f3; }
+    .configuration-tabs__label .holder:hover, .configuration-tabs__label .holder:focus {
+      border-color: rgba(142, 145, 145, 0.5); }
+  .configuration-tabs__label .handler {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-image: url(/img/svg/arr-select.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 11px;
+    position: absolute;
+    right: 20px;
+    top: 28px;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease; }
+  .configuration-tabs__label .open .handler {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  .configuration-tabs__label .heap {
+    position: absolute;
+    top: 100%;
+    width: calc(100%);
+    left: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    z-index: 2; }
+    .configuration-tabs__label .heap a {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: #16192c;
+      text-decoration: none;
+      -webkit-transition: 0.3s ease;
+      -o-transition: 0.3s ease;
+      transition: 0.3s ease;
+      padding: 20px;
+      display: block; }
+      .configuration-tabs__label .heap a:hover, .configuration-tabs__label .heap a:focus {
+        color: #f24a41; }
+  .configuration-tabs__label .heapOption + li {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  .configuration-tabs__label--color .holder {
+    padding-left: 50px; }
+
+.configuration-tabs__head {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.05em;
+  color: #b6b6b6; }
+
 .click {
   width: 100%; }
 
