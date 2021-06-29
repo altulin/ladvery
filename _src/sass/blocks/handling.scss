@@ -1,0 +1,82 @@
+.handling {
+  &__inner {
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__content {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__subtitle {
+  }
+
+  &__details {
+  }
+}
+.container {
+}
+.display {
+}
+.display_size_big {
+}
+.ticket {
+  display: flex;
+  &__wrap-img {
+    width: 264px;
+    height: 264px;
+    background-image: url(/img/view-bg-1.jpg);
+    background-size: cover;
+    background-position: 50% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 18px;
+    border-radius: 10px;
+  }
+
+  &__img {
+  }
+
+  &__information {
+  }
+}
+.information {
+  &__link {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__term {
+  }
+
+  &__description {
+  }
+}
+.details {
+  &__title {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__term {
+  }
+
+  &__description {
+  }
+}

@@ -220,9 +220,9 @@ block content
 
 
 
-  section.modal--order.modal-order#modal-order
+  section.modal.modal--order.modal-order#modal-order
     .modal-order__inner.configuration
-      .configuration__col--left
+      .configuration__col.configuration__col--left
         h2.configuration__title.display.display_size_big Бристоль 1ПГ
         p.configuration__head Укажите необходимые вам параметры
           br
@@ -244,15 +244,9 @@ block content
 
 
                     if item[1] === 'color'
-                      option.configuration-tabs__option-color(value="1") вариант 1
-                        //- span.configuration-tabs__color(style="background-color: #0A0A0A;")
-                        //- span.configuration-tabs__text вариант 1
-                      option.configuration-tabs__option-color(value="2") вариант 2
-                        //- span.configuration-tabs__color(style="background-color: ##E8F7C8;")
-                        //- span.configuration-tabs__text вариант 2
-                      option.configuration-tabs__option-color(value="3") вариант 3
-                        //- span.configuration-tabs__color(style="background-color: #0A0A0A;")
-                        //- span.configuration-tabs__text вариант 3
+                      option.configuration-tabs__option-color(value="#0A0A0A") вариант 1
+                      option.configuration-tabs__option-color(value="#E8F7C8") вариант 2
+                      option.configuration-tabs__option-color(value="#0A0A0A") вариант 3
                     else
 
                       option(value="1") вариант 1
@@ -267,40 +261,40 @@ block content
               ul.characteristic__list
                 each item in characteristic
                   li.characteristic__item
-                    span.characteristic__term= item[0]
-                    span.characteristic__description= item[1]
+                    span.characteristic__term
+                      p= item[0]
+                    span.characteristic__description
+                      p= item[1]
           hr.configuration-form__line
 
           .configuration-form__price.price-section
-            span.price-section__box
-              span.price-section__before 6500 руб.
-              span.price-section__presence.price-section__presence--yes в наличии
-
-
-            span.price-section__after 2600 руб.
-
-
-
+            span.price-section__before 6500 руб.
+            //span.price-section__after 2600 руб.
+            span.price-section__after.price-section__after--line 2600 руб.
+            //span.price-section__presence.price-section__presence--yes в наличии
+            //span.price-section__presence.price-section__presence--no под заказ
+            span.price-section__presence.price-section__presence--few мало на складе
 
 
 
       .configuration__col.configuration__col--right.view
         ul.view__list
           li.view__item
-            a.view__link(href="#in-interior") В интерьере
+            a.view__link(href="#in-interior" data-tabby-default) В интерьере
 
           li.view__item
             a.view__link(href="#out-interior") Без интерьера
 
         .view__in#in-interior
-          .view__interior-main
+          .view__interior-main.view__interior-main--bg
             figure.view__img-door
+              img(src="/img/door-1.png" alt="дверь" width="199" height="419")
 
           .view__interiors.preview
-            figure.preview__img.preview__img--1(role="button")
-            figure.preview__img.preview__img--2(role="button")
-            figure.preview__img.preview__img--3(role="button")
-            figure.preview__img.preview__img--4(role="button")
+            figure.preview__img.preview__img--current.preview__img--1(role="button" tabindex="0" data-bg="/img/view-bg-1.jpg")
+            figure.preview__img.preview__img--2(role="button" tabindex="0" data-bg="/img/view-bg-2.jpg")
+            figure.preview__img.preview__img--3(role="button" tabindex="0" data-bg="/img/view-bg-3.jpg")
+            figure.preview__img.preview__img--4(role="button" tabindex="0" data-bg="/img/view-bg-4.jpg")
 
 
 
@@ -310,6 +304,7 @@ block content
         .view__out#out-interior
           .view__interior-main
             figure.view__img-door
+              img(src="/img/door-1.png" alt="дверь" width="199" height="419")
 
       .configuration__click.click
         h3.click__title.display.display_size_big заказ в 1 клик

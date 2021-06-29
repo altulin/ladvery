@@ -14,6 +14,7 @@ const plugunsJsUsed = [
   `rangeSlider_js`,
   `jquery_modal_js`,
   `tabby_js`,
+  `inputmask_js`,
   `myJsLibs`,
   `myJsFile`,
 ];

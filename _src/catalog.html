@@ -777,9 +777,9 @@
   </div>
   </div>
   </section>
-  <section class="modal--order modal-order" id="modal-order">
+  <section class="modal modal--order modal-order" id="modal-order">
     <div class="modal-order__inner configuration">
-      <div class="configuration__col--left">
+      <div class="configuration__col configuration__col--left">
         <h2 class="configuration__title display display_size_big">Бристоль 1ПГ</h2>
         <p class="configuration__head">Укажите необходимые вам параметры
           <br>и рассчитайте точную стоимость</p>
@@ -801,9 +801,9 @@
               </label>
               <label class="configuration-tabs__label configuration-tabs__label--color"><span class="configuration-tabs__head">Цвет</span>
                 <select class="configuration-tabs__select" name="configuration-color">
-                  <option class="configuration-tabs__option-color" value="1">вариант 1</option>
-                  <option class="configuration-tabs__option-color" value="2">вариант 2</option>
-                  <option class="configuration-tabs__option-color" value="3">вариант 3</option>
+                  <option class="configuration-tabs__option-color" value="#0A0A0A">вариант 1</option>
+                  <option class="configuration-tabs__option-color" value="#E8F7C8">вариант 2</option>
+                  <option class="configuration-tabs__option-color" value="#0A0A0A">вариант 3</option>
                 </select>
               </label>
               <label class="configuration-tabs__label"><span class="configuration-tabs__head">Коробка</span>
@@ -844,51 +844,74 @@
             </div>
             <div class="configuration-tabs__content characteristic" id="tabs-characteristic">
               <ul class="characteristic__list">
-                <li class="characteristic__item"><span class="characteristic__term">Производитель</span><span class="characteristic__description">Лайндор</span>
+                <li class="characteristic__item"><span class="characteristic__term">
+                          <p>Производитель</p></span><span class="characteristic__description">
+                          <p>Лайндор</p></span>
                 </li>
-                <li class="characteristic__item"><span class="characteristic__term">Тип двери</span><span class="characteristic__description">Глухая</span>
+                <li class="characteristic__item"><span class="characteristic__term">
+                          <p>Тип двери</p></span><span class="characteristic__description">
+                          <p>Глухая</p></span>
                 </li>
-                <li class="characteristic__item"><span class="characteristic__term">Серия</span><span class="characteristic__description">Роскошная классика</span>
+                <li class="characteristic__item"><span class="characteristic__term">
+                          <p>Серия</p></span><span class="characteristic__description">
+                          <p>Роскошная классика</p></span>
                 </li>
-                <li class="characteristic__item"><span class="characteristic__term">Материал</span><span class="characteristic__description">ДСП</span>
+                <li class="characteristic__item"><span class="characteristic__term">
+                          <p>Материал</p></span><span class="characteristic__description">
+                          <p>ДСП</p></span>
                 </li>
-                <li class="characteristic__item"><span class="characteristic__term">Тип покрытия</span><span class="characteristic__description">шпон</span>
+                <li class="characteristic__item"><span class="characteristic__term">
+                          <p>Тип покрытия</p></span><span class="characteristic__description">
+                          <p>шпон</p></span>
                 </li>
-                <li class="characteristic__item"><span class="characteristic__term">Толщина полотна</span><span class="characteristic__description">35 мм.</span>
+                <li class="characteristic__item"><span class="characteristic__term">
+                          <p>Толщина полотна</p></span><span class="characteristic__description">
+                          <p>35 мм.</p></span>
                 </li>
-                <li class="characteristic__item"><span class="characteristic__term">Упаковка</span><span class="characteristic__description">пенопласт, полиэтилен</span>
+                <li class="characteristic__item"><span class="characteristic__term">
+                          <p>Упаковка</p></span><span class="characteristic__description">
+                          <p>пенопласт, полиэтилен</p></span>
                 </li>
-                <li class="characteristic__item"><span class="characteristic__term">Дополнительно</span><span class="characteristic__description">погонажные изделия в тон дверного полотна</span>
+                <li class="characteristic__item"><span class="characteristic__term">
+                          <p>Дополнительно</p></span><span class="characteristic__description">
+                          <p>погонажные изделия в тон дверного полотна</p></span>
                 </li>
               </ul>
             </div>
           </div>
           <hr class="configuration-form__line">
-          <div class="configuration-form__price price-section"><span class="price-section__box"><span class="price-section__before">6500 руб.</span><span class="price-section__presence price-section__presence--yes">в наличии</span></span><span class="price-section__after">2600 руб.</span>
+          <div class="configuration-form__price price-section"><span class="price-section__before">6500 руб.</span>
+            <!--span.price-section__after 2600 руб.--><span class="price-section__after price-section__after--line">2600 руб.</span>
+            <!--span.price-section__presence.price-section__presence--yes в наличии-->
+            <!--span.price-section__presence.price-section__presence--no под заказ--><span class="price-section__presence price-section__presence--few">мало на складе</span>
           </div>
         </form>
       </div>
       <div class="configuration__col configuration__col--right view">
         <ul class="view__list">
-          <li class="view__item"><a class="view__link" href="#in-interior">В интерьере</a>
+          <li class="view__item"><a class="view__link" href="#in-interior" data-tabby-default>В интерьере</a>
           </li>
           <li class="view__item"><a class="view__link" href="#out-interior">Без интерьера</a>
           </li>
         </ul>
         <div class="view__in" id="in-interior">
-          <div class="view__interior-main">
-            <figure class="view__img-door"></figure>
+          <div class="view__interior-main view__interior-main--bg">
+            <figure class="view__img-door">
+              <img src="/img/door-1.png" alt="дверь" width="199" height="419">
+            </figure>
           </div>
           <div class="view__interiors preview">
-            <figure class="preview__img preview__img--1" role="button"></figure>
-            <figure class="preview__img preview__img--2" role="button"></figure>
-            <figure class="preview__img preview__img--3" role="button"></figure>
-            <figure class="preview__img preview__img--4" role="button"></figure>
+            <figure class="preview__img preview__img--current preview__img--1" role="button" tabindex="0" data-bg="/img/view-bg-1.jpg"></figure>
+            <figure class="preview__img preview__img--2" role="button" tabindex="0" data-bg="/img/view-bg-2.jpg"></figure>
+            <figure class="preview__img preview__img--3" role="button" tabindex="0" data-bg="/img/view-bg-3.jpg"></figure>
+            <figure class="preview__img preview__img--4" role="button" tabindex="0" data-bg="/img/view-bg-4.jpg"></figure>
           </div>
         </div>
         <div class="view__out" id="out-interior">
           <div class="view__interior-main">
-            <figure class="view__img-door"></figure>
+            <figure class="view__img-door">
+              <img src="/img/door-1.png" alt="дверь" width="199" height="419">
+            </figure>
           </div>
         </div>
       </div>

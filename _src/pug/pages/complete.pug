@@ -1,0 +1,56 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+block var
+  - const complete = true
+
+block content
+  include ../modules/_breadcrumbs
+
+  section.handling
+    .handling__inner.container
+      h1.handling__title.display.display_size_big Ваш Заказ <span>№ 123213</span> оформлен
+
+      .handling__content
+        ul.handling__list
+          while n < 2
+            -n++
+            li.handling__item.ticket
+              figure.ticket__wrap-img
+                img.ticket__img(src="img/ds1.png" alt="дверь" whidth="94" height="196")
+
+              .ticket__information.information
+                .information__link.handling__subtitle
+                  h3 2110-2 Light  X-Line
+
+                ul.information__list
+                  each item in information
+                    li.information__item
+                      span.information__term
+                        p= item[0]
+                      span.information__description
+                        p= item[1]
+          -n=0
+
+        .handling__details.details
+          .handling__subtitle.details__title
+            h3 Детали заказа
+
+          ul.details__list
+            each item in details_1
+              li.details__item
+                span.details__term
+                  p= item[0]
+                span.details__description
+                  p= item[1]
+
+          .handling__subtitle.details__title
+            h3 Информация по заказу
+
+          ul.details__list
+            each item in details_2
+              li.details__item
+                span.details__term
+                  p= item[0]
+                span.details__description
+                  p= item[1]
