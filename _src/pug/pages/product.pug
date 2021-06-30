@@ -1,0 +1,149 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+block var
+  - const bg = true
+
+block content
+  include ../modules/_breadcrumbs
+
+  section.modal--order.modal-order.product-card
+    .modal-order__inner.configuration.container
+      .configuration__col.configuration__col--left
+        h2.configuration__title.display.display_size_big Бристоль 1ПГ
+        p.configuration__head Укажите необходимые вам параметры
+          br
+          | и рассчитайте точную стоимость
+        form.configuration__form.configuration-form#configuration-form(action="#" method="post" name="modal-order-form")
+          .configuration-form__inner
+            ul.configuration-form__list.configuration-tabs
+              li.configuration-tabs__item
+                a.configuration-tabs__link(href="#tabs-configuration" data-tabby-default) Конфигуратор
+              li.configuration-tabs__item
+                a.configuration-tabs__link(href="#tabs-characteristic") Характеристики
+
+            .configuration-tabs__content#tabs-configuration
+              each item in configuration
+                label.configuration-tabs__label(class=(item[1] === 'color'?'configuration-tabs__label--color':''))
+                  span.configuration-tabs__head= item[0]
+                  select.configuration-tabs__select(name=`configuration-${item[1]}`)
+
+
+                    if item[1] === 'color'
+                      option.configuration-tabs__option-color(value="#0A0A0A") вариант 1
+                      option.configuration-tabs__option-color(value="#E8F7C8") вариант 2
+                      option.configuration-tabs__option-color(value="#0A0A0A") вариант 3
+                    else
+
+                      option(value="1") вариант 1
+                      option(value="2") вариант 2
+                      option(value="3") вариант 3
+
+            .configuration-tabs__content#tabs-characteristic.characteristic
+              ul.characteristic__list
+                each item in characteristic
+                  li.characteristic__item
+                    span.characteristic__term
+                      p= item[0]
+                    span.characteristic__description
+                      p= item[1]
+          hr.configuration-form__line
+
+          .configuration-form__price.price-section
+            span.price-section__before 6500 ₽
+            //span.price-section__after 2600 ₽
+            span.price-section__after.price-section__after--line 2600 ₽
+            //span.price-section__presence.price-section__presence--yes в наличии
+            //span.price-section__presence.price-section__presence--no под заказ
+            span.price-section__presence.price-section__presence--few мало на складе
+
+          // button.product-card__btn.btn-fill(type="submit" form="configuration-form") В корзину
+          a.product-card__btn.btn-fill(href="basket.html") В корзину
+
+      .configuration__col.configuration__col--right.view
+        ul.view__list
+          li.view__item
+            a.view__link(href="#in-interior" data-tabby-default) В интерьере
+
+          li.view__item
+            a.view__link(href="#out-interior") Без интерьера
+
+        .view__in#in-interior
+          .view__interior-main.view__interior-main--bg
+            figure.view__img-door
+              img(src="/img/product-door-1.png" alt="дверь" width="249" height="522")
+
+          .view__interiors.preview
+            figure.preview__img.preview__img--current.preview__img--1(role="button" tabindex="0" data-bg="/img/view-bg-1.jpg")
+            figure.preview__img.preview__img--2(role="button" tabindex="0" data-bg="/img/view-bg-2.jpg")
+            figure.preview__img.preview__img--3(role="button" tabindex="0" data-bg="/img/view-bg-3.jpg")
+            figure.preview__img.preview__img--4(role="button" tabindex="0" data-bg="/img/view-bg-4.jpg")
+
+        .view__out#out-interior
+          .view__interior-main
+            figure.view__img-door
+              img(src="/img/product-door-1.png" alt="дверь" width="249" height="522")
+
+  section.sale.product-slider
+    .container.sale__container
+      h2.display.display_size_big.display_center.sale__title Другие изделия из серии "Роскошная классика"
+
+      .sale__content
+        .product-slider__caorusel.swiper-container
+          .swiper-wrapper
+
+            while n < 8
+              -n++
+
+              .swiper-slide.products__item
+                article.sale-card
+                  img.sale-card__thumb(src='img/ds1.jpg' width='93' height='195' alt='Дверь Агата')
+                  span.sale-card__text
+                    .sale-card__head
+                      h3.sale-card__title
+                        a(href='product.html') Агата
+                      span.sale-card__desc
+                        p Тон 30 Шоколад шпон ясень
+
+                    span.sale-card__action
+                      span.sale-card__price
+                        span.sale-card__box
+                          span.sale-card__price-before 6500 ₽
+                          if n===2
+                            span.sale-card__presence.sale-card__presence--no под заказ
+                          else if n===3
+                            span.sale-card__presence.sale-card__presence--few мало на складе
+                          else
+                            span.sale-card__presence.sale-card__presence--yes в наличии
+
+                        span.sale-card__price-after 2600 ₽
+
+                    ul.sale-card__colors
+                      li.sale-card__colors-item
+                        label.sale-card__colors-label(style="background-color: #0A0A0A;" data-image='img/ds2.jpg' data-color='Тон 10 Рустик шпон дуб' tabindex="0")
+                          input.sale-card__colors-input(type="text")
+                      li.sale-card__colors-item
+                        label.sale-card__colors-label(style="background-color: #E8F7C8;" data-image='img/ds1.jpg' data-color='Тон 30 Шоколад шпон ясень' tabindex="0")
+                          input.sale-card__colors-input(type="text")
+                      li.sale-card__colors-item
+                        label.sale-card__colors-label(style="background-color: #FF3232;" data-image='img/ds2.jpg' data-color='Тон 10 Рустик шпон дуб' tabindex="0")
+                          input.sale-card__colors-input(type="text")
+            -n=0
+
+
+
+
+
+
+
+        button.slider-control.slider-control_prev.sale__control.sale__control_prev
+          svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+            use(href='/img/sprite.svg#icon-arrow-left')
+
+        button.slider-control.slider-control_next.sale__control.sale__control_next
+          svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+            use(href='/img/sprite.svg#icon-arrow-right')
+
+        .slider-pagination.sale__pagination
+
+        a.btn-rect.sale__btn-rect(href) Перейти в каталог

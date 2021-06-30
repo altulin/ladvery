@@ -3,18 +3,7 @@ html(lang="ru")
   block var
   include ../modules/_head
 
-  //- body.page(class= (cover ? 'page--catalog': '') )
-
-  //- if cover
-  //-   body.page.page--catalog
-
-  //- if complete
-  //-   body.page.page--complete
-
-  //- else
-  //-   body.page
-  body.page(class= (cover ? 'page--catalog': '') )
-
+  body.page(class= (cover ? 'page--catalog': '') class= (bg ? 'page--bg': '') )
 
     .page__wrapper
       include ../helpers/arrays

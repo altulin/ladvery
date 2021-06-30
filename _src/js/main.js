@@ -46,6 +46,31 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  const productCaorusel = new Swiper(".product-slider__caorusel", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    pagination: {
+      el: ".sale__pagination",
+    },
+    navigation: {
+      nextEl: ".sale__control_next",
+      prevEl: ".sale__control_prev",
+    },
+    breakpoints: {
+      1380: {
+        slidesPerView: 4,
+      },
+      1000: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 50,
+      },
+    },
+  });
+
   const startAdvantages = new Swiper(".start__steps", {
     slidesPerView: 4,
     pagination: {
@@ -359,7 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (document.querySelector(".configuration-tabs__label--color")) {
     $(".configuration-tabs__label--color .heapOption").map(function (i, item) {
-      console.log($(item).find("a").css("background-color", "red"));
+      // console.log($(item).find("a").css("background-color", "red"));
     });
   }
 });

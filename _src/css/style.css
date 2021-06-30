@@ -3322,6 +3322,7 @@ span {
     .view__interior-main--bg {
       border-radius: 10px;
       background-image: url(/img/view-bg-1.jpg);
+      background-repeat: no-repeat;
       background-position: 50% 100%;
       margin-bottom: 30px; }
   .view__img-door {
@@ -3347,7 +3348,8 @@ span {
     opacity: 0.3;
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
-    transition: 0.3s ease; }
+    transition: 0.3s ease;
+    background-size: cover; }
     @media screen and (max-width: 600px) {
       .preview__img {
         min-height: auto;
@@ -3483,13 +3485,61 @@ span {
   max-width: 200px;
   text-align: left; }
 
-.handling__title {
-  margin-bottom: 40px; }
+.handling {
+  margin-bottom: 100px; }
+  @media screen and (max-width: 600px) {
+    .handling {
+      margin-bottom: 60px; } }
+  .handling__title {
+    margin-bottom: 40px; }
+  .handling__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    @media screen and (max-width: 1200px) {
+      .handling__content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
+  .handling__list {
+    width: 100%;
+    max-width: 778px; }
+    @media screen and (max-width: 1200px) {
+      .handling__list {
+        max-width: none;
+        margin-bottom: 40px; } }
+  .handling__item + li {
+    margin-top: 20px; }
+  .handling__details {
+    margin-left: 30px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.07);
+            box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.07);
+    border-radius: 10px; }
+    @media screen and (max-width: 1200px) {
+      .handling__details {
+        margin-left: 0; } }
 
 .ticket {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.07);
+          box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  padding: 40px; }
+  @media screen and (max-width: 768px) {
+    .ticket {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  @media screen and (max-width: 600px) {
+    .ticket {
+      padding-left: 20px;
+      padding-right: 20px; } }
   .ticket__wrap-img {
     width: 264px;
     height: 264px;
@@ -3507,5 +3557,155 @@ span {
             align-items: flex-end;
     padding-bottom: 18px;
     border-radius: 10px; }
+    @media screen and (max-width: 768px) {
+      .ticket__wrap-img {
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+        margin-bottom: 30px; } }
+  .ticket__information {
+    margin-left: 40px; }
+    @media screen and (max-width: 768px) {
+      .ticket__information {
+        margin-left: 0; } }
+
+.information__link {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #000000;
+  margin-bottom: 20px; }
+  @media screen and (max-width: 600px) {
+    .information__link h3 {
+      text-align: center; } }
+
+.information__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .information__item + li {
+    margin-top: 14px; }
+  @media screen and (max-width: 768px) {
+    .information__item {
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
+
+.information__term {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+  color: #b6b6b6;
+  width: 122px; }
+  @media screen and (max-width: 600px) {
+    .information__term {
+      width: auto; } }
+
+.information__description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+  color: #424242;
+  text-align: center; }
+
+.details__title {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.05em;
+  color: #000000;
+  padding: 40px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .details__title:not(:first-child) {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  @media screen and (max-width: 600px) {
+    .details__title {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media screen and (max-width: 600px) {
+    .details__title h3 {
+      text-align: center; } }
+
+.details__list {
+  padding: 20px 40px; }
+  @media screen and (max-width: 600px) {
+    .details__list {
+      padding-left: 20px;
+      padding-right: 20px; } }
+
+.details__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .details__item + li {
+    margin-top: 20px; }
+
+.details__term {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.05em;
+  color: #16192c; }
+
+.details__description {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: -0.05em;
+  color: #16192c; }
+
+.page--bg {
+  background-color: #f2f3f3; }
+
+.product-card {
+  max-width: none;
+  padding-bottom: 140px;
+  background-color: #fff;
+  border-radius: 0; }
+  @media screen and (max-width: 600px) {
+    .product-card {
+      padding-left: 0;
+      padding-right: 0; } }
+  .product-card__btn {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.05em;
+    height: auto;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+  .product-card .configuration__col--right {
+    max-width: 706px; }
+  .product-card .view__interior-main {
+    height: 706px; }
+    @media screen and (max-width: 600px) {
+      .product-card .view__interior-main {
+        height: 610px; } }
+  .product-card .view__interior-main--bg {
+    background-image: url(/img/product-bg.jpg); }
+  .product-card .view__img-door {
+    width: 249px;
+    height: 522px; }
+  .product-card .preview__img {
+    min-height: 149px; }
+    @media screen and (max-width: 600px) {
+      .product-card .preview__img {
+        min-height: auto; } }
+
+.product-slider .products__item .sale-card {
+  background: #fff; }
 
 /*# sourceMappingURL=style.css.map */

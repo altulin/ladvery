@@ -1,0 +1,75 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+
+block content
+  include ../modules/_breadcrumbs
+  section.basket
+    .basket.container
+      h1.basket__title.display.display_size_big Корзина
+      .basket__content
+        .basket__column.basket__column--left
+          ul.basket__list
+            while n < 2
+              -n++
+              li.basket__item.ticket
+                figure.ticket__wrap-img
+                  img.ticket__img(src="img/ds1.png" alt="дверь" whidth="94" height="196")
+
+                .ticket__information.information
+                  .information__link.basket__subtitle
+                    h3 2110-2 Light  X-Line
+
+                  ul.information__list
+                    each item in information_basket
+                      li.information__item
+                        span.information__term
+                          p= item[0]
+                        span.information__description
+                          p= item[1]
+
+                .ticket__bottom
+                  .ticket__counter.counter
+                    span.counter__btn.counter__btn--minus(role="button" tabindex="0")
+                    input.counter__input.counter-enter(type="text" form="basket-form" name=`counter-${n}`)
+                    span.counter__btn.counter__btn--plus(role="button" tabindex="0")
+
+
+
+                  .ticket__price.price-section
+                    span.price-section__before(data-counter=`counter-${n}`) 6500 ₽
+                    //span.price-section__after 2600 ₽
+                    span.price-section__after.price-section__after--line 2600 ₽
+                    //span.price-section__presence.price-section__presence--yes в наличии
+                    //span.price-section__presence.price-section__presence--no под заказ
+                    span.price-section__presence.price-section__presence--few мало на складе
+
+
+                button.ticket__delete(type="button") Удалить
+
+
+            -n=0
+
+          .basket__additional.additional
+            h3.additional__title.display.display_size_big Дополнительные услуги
+            .additional__inner
+              figure.additional__wrap-img
+              .additional__box
+                span.additional__sub-title
+                  h4 Установка межкомнатных дверей
+                span.additional__price
+                  p Стоимость установки 1 стандартной двери - 800 ₽
+
+                .additional__counter-box
+                  .additional__counter.counter
+                    span.counter__btn.counter__btn--minus(role="button" tabindex="0")
+                    input.counter__input.counter-enter(type="text" form="basket-form" name="counter-additional")
+                    span.counter__btn.counter__btn--plus(role="button" tabindex="0")
+
+                  .additional__price.price-section
+                    span.price-section__text Итого за <span class="price-section__total" data-total="counter-additional">3</span> двери:
+                    span.price-section__before(data-counter="counter-additional") 6500 ₽
+                    //span.price-section__after 2600 ₽
+
+          .finality
+            form.finality__form#basket-form(action="#" method="post" name="basket-form")

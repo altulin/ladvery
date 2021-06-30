@@ -23,7 +23,7 @@
   <link href="/css/style.css" rel="stylesheet">
 </head>
 
-<body class="page page--bg">
+<body class="page">
   <div class="page__wrapper">
     <header class="head-page">
       <div class="head-page__top">
@@ -222,179 +222,136 @@
           </li>
         </ul>
       </section>
-      <section class="handling">
-        <div class="handling__inner container">
-          <h1 class="handling__title display display_size_big">Ваш Заказ <span>№ 123213</span> оформлен</h1>
-          <div class="handling__content">
-            <ul class="handling__list">
-              <li class="handling__item ticket">
-                <figure class="ticket__wrap-img">
-                  <img class="ticket__img" src="img/ds1.png" alt="дверь" whidth="94" height="196">
-                </figure>
-                <div class="ticket__information information">
-                  <div class="information__link handling__subtitle">
-                    <h3>2110-2 Light  X-Line</h3>
+      <section class="basket">
+        <div class="basket container">
+          <h1 class="basket__title display display_size_big">Корзина</h1>
+          <div class="basket__content">
+            <div class="basket__column basket__column--left">
+              <ul class="basket__list">
+                <li class="basket__item ticket">
+                  <figure class="ticket__wrap-img">
+                    <img class="ticket__img" src="img/ds1.png" alt="дверь" whidth="94" height="196">
+                  </figure>
+                  <div class="ticket__information information">
+                    <div class="information__link basket__subtitle">
+                      <h3>2110-2 Light  X-Line</h3>
+                    </div>
+                    <ul class="information__list">
+                      <li class="information__item"><span class="information__term">
+                            <p>Размер</p></span><span class="information__description">
+                            <p>2000*600</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Цвет</p></span><span class="information__description">
+                            <p>Коричневый</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Коробка</p></span><span class="information__description">
+                            <p>Без порога</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Наличник</p></span><span class="information__description">
+                            <p>С одной стороны</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Петли</p></span><span class="information__description">
+                            <p>Универстальные</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Замок</p></span><span class="information__description">
+                            <p>Санузловой</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Ручка</p></span><span class="information__description">
+                            <p>Нажимная Morelli</p></span>
+                      </li>
+                    </ul>
                   </div>
-                  <ul class="information__list">
-                    <li class="information__item"><span class="information__term">
-                          <p>Размер</p></span><span class="information__description">
-                          <p>2000*600</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Цвет</p></span><span class="information__description">
-                          <p>Коричневый</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Коробка</p></span><span class="information__description">
-                          <p>Без порога</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Наличник</p></span><span class="information__description">
-                          <p>С одной стороны</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Петли</p></span><span class="information__description">
-                          <p>Универстальные</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Замок</p></span><span class="information__description">
-                          <p>Санузловой</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Ручка</p></span><span class="information__description">
-                          <p>Нажимная Morelli</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Колличество</p></span><span class="information__description">
-                          <p>4шт.</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Стоимость</p></span><span class="information__description">
-                          <p>52 600 ₽</p></span>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="handling__item ticket">
-                <figure class="ticket__wrap-img">
-                  <img class="ticket__img" src="img/ds1.png" alt="дверь" whidth="94" height="196">
-                </figure>
-                <div class="ticket__information information">
-                  <div class="information__link handling__subtitle">
-                    <h3>2110-2 Light  X-Line</h3>
+                  <div class="ticket__bottom">
+                    <div class="ticket__counter counter"><span class="counter__btn counter__btn--minus" role="button" tabindex="0"></span>
+                      <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-1"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
+                    </div>
+                    <div class="ticket__price price-section"><span class="price-section__before" data-counter="counter-1">6500 ₽</span>
+                      <!--span.price-section__after 2600 ₽--><span class="price-section__after price-section__after--line">2600 ₽</span>
+                      <!--span.price-section__presence.price-section__presence--yes в наличии-->
+                      <!--span.price-section__presence.price-section__presence--no под заказ--><span class="price-section__presence price-section__presence--few">мало на складе</span>
+                    </div>
                   </div>
-                  <ul class="information__list">
-                    <li class="information__item"><span class="information__term">
-                          <p>Размер</p></span><span class="information__description">
-                          <p>2000*600</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Цвет</p></span><span class="information__description">
-                          <p>Коричневый</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Коробка</p></span><span class="information__description">
-                          <p>Без порога</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Наличник</p></span><span class="information__description">
-                          <p>С одной стороны</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Петли</p></span><span class="information__description">
-                          <p>Универстальные</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Замок</p></span><span class="information__description">
-                          <p>Санузловой</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Ручка</p></span><span class="information__description">
-                          <p>Нажимная Morelli</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Колличество</p></span><span class="information__description">
-                          <p>4шт.</p></span>
-                    </li>
-                    <li class="information__item"><span class="information__term">
-                          <p>Стоимость</p></span><span class="information__description">
-                          <p>52 600 ₽</p></span>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-            <div class="handling__details details">
-              <div class="handling__subtitle details__title">
-                <h3>Детали заказа</h3>
-              </div>
-              <ul class="details__list">
-                <li class="details__item"><span class="details__term">
-                      <p>Товары (3)</p></span><span class="details__description">
-                      <p>55 000 ₽</p></span>
+                  <button class="ticket__delete" type="button">Удалить</button>
                 </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Скидка</p></span><span class="details__description">
-                      <p>-15 000₽</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Доставка (3шт)</p></span><span class="details__description">
-                      <p>440 ₽</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Подьем (5этажей)</p></span><span class="details__description">
-                      <p>560 ₽</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Установка</p></span><span class="details__description">
-                      <p>1 500 ₽</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Итоговая стоимость</p></span><span class="details__description">
-                      <p>42 500 ₽</p></span>
+                <li class="basket__item ticket">
+                  <figure class="ticket__wrap-img">
+                    <img class="ticket__img" src="img/ds1.png" alt="дверь" whidth="94" height="196">
+                  </figure>
+                  <div class="ticket__information information">
+                    <div class="information__link basket__subtitle">
+                      <h3>2110-2 Light  X-Line</h3>
+                    </div>
+                    <ul class="information__list">
+                      <li class="information__item"><span class="information__term">
+                            <p>Размер</p></span><span class="information__description">
+                            <p>2000*600</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Цвет</p></span><span class="information__description">
+                            <p>Коричневый</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Коробка</p></span><span class="information__description">
+                            <p>Без порога</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Наличник</p></span><span class="information__description">
+                            <p>С одной стороны</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Петли</p></span><span class="information__description">
+                            <p>Универстальные</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Замок</p></span><span class="information__description">
+                            <p>Санузловой</p></span>
+                      </li>
+                      <li class="information__item"><span class="information__term">
+                            <p>Ручка</p></span><span class="information__description">
+                            <p>Нажимная Morelli</p></span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="ticket__bottom">
+                    <div class="ticket__counter counter"><span class="counter__btn counter__btn--minus" role="button" tabindex="0"></span>
+                      <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-2"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
+                    </div>
+                    <div class="ticket__price price-section"><span class="price-section__before" data-counter="counter-2">6500 ₽</span>
+                      <!--span.price-section__after 2600 ₽--><span class="price-section__after price-section__after--line">2600 ₽</span>
+                      <!--span.price-section__presence.price-section__presence--yes в наличии-->
+                      <!--span.price-section__presence.price-section__presence--no под заказ--><span class="price-section__presence price-section__presence--few">мало на складе</span>
+                    </div>
+                  </div>
+                  <button class="ticket__delete" type="button">Удалить</button>
                 </li>
               </ul>
-              <div class="handling__subtitle details__title">
-                <h3>Информация по заказу</h3>
+              <div class="basket__additional additional">
+                <h3 class="additional__title display display_size_big">Дополнительные услуги</h3>
+                <div class="additional__inner">
+                  <figure class="additional__wrap-img"></figure>
+                  <div class="additional__box"><span class="additional__sub-title">
+                        <h4>Установка межкомнатных дверей</h4></span><span class="additional__price">
+                        <p>Стоимость установки 1 стандартной двери - 800 ₽</p></span>
+                    <div class="additional__counter-box">
+                      <div class="additional__counter counter"><span class="counter__btn counter__btn--minus" role="button" tabindex="0"></span>
+                        <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-additional"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
+                      </div>
+                      <div class="additional__price price-section"><span class="price-section__text">Итого за <span class="price-section__total" data-total="counter-additional">3</span> двери:</span><span class="price-section__before" data-counter="counter-additional">6500 ₽</span>
+                        <!--span.price-section__after 2600 ₽-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <ul class="details__list">
-                <li class="details__item"><span class="details__term">
-                      <p>E-mail</p></span><span class="details__description">
-                      <p>Alexandrovskiy@gmail.com</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Телефон</p></span><span class="details__description">
-                      <p>+7 (914) 912-62-15</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Способ получения</p></span><span class="details__description">
-                      <p>Доставка</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Улица</p></span><span class="details__description">
-                      <p>Байкальская</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>№ Дома</p></span><span class="details__description">
-                      <p>545</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>№ Квартиры</p></span><span class="details__description">
-                      <p>1252</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Подьем</p></span><span class="details__description">
-                      <p>нужен</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Этаж</p></span><span class="details__description">
-                      <p>3</p></span>
-                </li>
-                <li class="details__item"><span class="details__term">
-                      <p>Способ оплаты</p></span><span class="details__description">
-                      <p>Картой онлайн</p></span>
-                </li>
-              </ul>
+              <div class="finality">
+                <form class="finality__form" id="basket-form" action="#" method="post" name="basket-form"></form>
+              </div>
             </div>
           </div>
         </div>

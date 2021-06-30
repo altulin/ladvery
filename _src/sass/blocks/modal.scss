@@ -402,6 +402,7 @@
     &--bg {
       border-radius: 10px;
       background-image: url(/img/view-bg-1.jpg);
+      background-repeat: no-repeat;
       background-position: 50% 100%;
       margin-bottom: 30px;
     }
@@ -427,6 +428,7 @@
     cursor: pointer;
     opacity: 0.3;
     transition: $transition;
+    background-size: cover;
 
     @include mw($ph) {
       // width: calc(25% - 5px);

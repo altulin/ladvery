@@ -9,8 +9,8 @@ const assemblyWebpack = false; // webpack true or false
 const assemblyBabel = false; // babel true or false
 
 const plugunsJsUsed = [
-  `swiper_js`,
   `jquery_js`,
+  `swiper_js`,
   `rangeSlider_js`,
   `jquery_modal_js`,
   `tabby_js`,

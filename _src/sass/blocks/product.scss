@@ -1,0 +1,61 @@
+.product-card {
+  max-width: none;
+  padding-bottom: 140px;
+  background-color: $white;
+  border-radius: 0;
+
+  @include mw($ph) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__btn {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.05em;
+    height: auto;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  & .configuration__col--right {
+    max-width: 706px;
+  }
+
+  & .view__interior-main {
+    height: 706px;
+
+    @include mw($ph) {
+      height: 610px;
+    }
+  }
+
+  & .view__interior-main--bg {
+    background-image: url(/img/product-bg.jpg);
+  }
+
+  & .view__img-door {
+    width: 249px;
+    height: 522px;
+  }
+
+  & .preview__img {
+    min-height: 149px;
+
+    @include mw($ph) {
+      min-height: auto;
+    }
+  }
+}
+
+.product-slider {
+  & .products__item {
+    & .sale-card {
+      background: $white;
+    }
+  }
+}
