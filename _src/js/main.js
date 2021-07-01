@@ -1,3 +1,5 @@
+// const { doc } = require("prettier");
+
 document.addEventListener("DOMContentLoaded", function () {
   const aboutAdvantages = new Swiper(".about__advantages", {
     slidesPerView: 4,
@@ -470,7 +472,9 @@ document.addEventListener("DOMContentLoaded", function () {
     myMap.behaviors.disable("scrollZoom");
   }
 
-  ymaps.ready(initBasketMap);
+  if (document.querySelector("#tab-content__map")) {
+    ymaps.ready(initBasketMap);
+  }
 
   if (document.querySelector("#basket-form")) {
     const sendForm = (e) => {
