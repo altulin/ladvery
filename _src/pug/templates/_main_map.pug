@@ -3,7 +3,8 @@ html(lang="ru")
 
   include ../modules/_head
 
-  body.page
+  //- body.page
+  body.page(class= (cover ? 'page--catalog': '') class= (bg ? 'page--bg': '') )
     .page__wrapper
       include ../helpers/arrays
       include ../modules/_header

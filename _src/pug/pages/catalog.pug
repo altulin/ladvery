@@ -18,20 +18,20 @@ block content
 
               ul.filter__sublist.type__list
                 li.type__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="type" value="deaf")
+                  label.filter__label(for="input-deaf")
+                    input.filter__input#input-deaf(type="checkbox" name="type" value="deaf")
                     span.filter__label-after
                     span.filter__label-text Глухая
 
                 li.type__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="type" value="glass")
+                  label.filter__label(for="input-glass")
+                    input.filter__input#input-glass(type="checkbox" name="type" value="glass")
                     span.filter__label-after
                     span.filter__label-text Со стеклом
 
                 li.type__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="type" value="folding")
+                  label.filter__label(for="input-folding")
+                    input.filter__input#input-folding(type="checkbox" name="type" value="folding")
                     span.filter__label-after
                     span.filter__label-text Складные
 
@@ -89,44 +89,44 @@ block content
 
               ul.filter__sublist.make__list
                 li.make__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="make" value="corona")
+                  label.filter__label(for="input-corona")
+                    input.filter__input#input-corona(type="checkbox" name="make" value="corona")
                     span.filter__label-after
                     span.filter__label-text Корона
 
                 li.make__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="make" value="Dubrava-Siberia")
+                  label.filter__label(for="input-Dubrava-Siberia")
+                    input.filter__input#input-Dubrava-Siberia(type="checkbox" name="make" value="Dubrava-Siberia")
                     span.filter__label-after
                     span.filter__label-text Дубрава-Сибирь
 
                 li.make__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="make" value="Ocean")
+                  label.filter__label(for="input-Ocean")
+                    input.filter__input#input-Ocean(type="checkbox" name="make" value="Ocean")
                     span.filter__label-after
                     span.filter__label-text Океан
 
                 li.make__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="make" value="Interne")
+                  label.filter__label(for="input-Interne")
+                    input.filter__input#input-Interne(type="checkbox" name="make" value="Interne")
                     span.filter__label-after
                     span.filter__label-text Interne DOORS
 
                 li.make__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="make" value="Zadoor")
+                  label.filter__label(for="input-Zadoor")
+                    input.filter__input#input-Zadoor(type="checkbox" name="make" value="Zadoor")
                     span.filter__label-after
                     span.filter__label-text Zadoor
 
                 li.make__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="make" value="line-door")
+                  label.filter__label(for="input-line-door")
+                    input.filter__input#input-line-door(type="checkbox" name="make" value="line-door")
                     span.filter__label-after
                     span.filter__label-text Лайн-дор
 
                 li.make__item
-                  label.filter__label
-                    input.filter__input(type="checkbox" name="make" value="Mebildrev")
+                  label.filter__label(for="input-Mebildrev")
+                    input.filter__input#input-Mebildrev(type="checkbox" name="make" value="Mebildrev")
                     span.filter__label-after
                     span.filter__label-text Мебильдрев
 
@@ -140,8 +140,8 @@ block content
                 span.info__num 109
                 | товаров
 
-            label.info__filter.info-filter
-              select.info-filter__select
+            label.info__filter.info-filter(for="select-info-filter")
+              select.info-filter__select#select-info-filter(name="select-info")
                 option.info-filter__option(value="pop") Популярное
                 option.info-filter__option(value="up-price") Дороже
                 option.info-filter__option(value="down-price") Дешевле
@@ -308,7 +308,7 @@ block content
 
       .configuration__click.click
         h3.click__title.display.display_size_big заказ в 1 клик
-        label.click__label
-          input.click__input(type="text" name="configuration-phone" form="configuration-form" required)
+        label.click__label(for="input-configuration-phone")
+          input.click__input#input-configuration-phone(type="text" name="configuration-phone" form="configuration-form" required)
 
         button.click__btn.btn-fill(type="submit" form="configuration-form") Оформить заказ

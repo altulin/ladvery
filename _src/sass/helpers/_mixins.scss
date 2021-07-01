@@ -67,8 +67,8 @@
       @content;
     }
   } @else if $pseudo == "before" {
-    &:hover::after,
-    &:focus::after {
+    &:hover::before,
+    &:focus::before {
       @content;
     }
   } @else {

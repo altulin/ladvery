@@ -220,8 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Map
 
-  // ymaps.ready(init);
-
   // Mobile menu
   const burger = document.querySelector(".js-burger");
   const mobileNav = document.querySelector(".js-mobile-nav");
@@ -385,6 +383,113 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".configuration-tabs__label--color")) {
     $(".configuration-tabs__label--color .heapOption").map(function (i, item) {
       // console.log($(item).find("a").css("background-color", "red"));
+    });
+  }
+
+  if (document.querySelector(".climb")) {
+    $(".climb").accordion({
+      transitionSpeed: 300,
+    });
+  }
+
+  if (document.querySelector(".counter__btn")) {
+    const getDataCounter = (elem, val) => {
+      const name = elem.attr("name");
+      $(`[data-counter=${name}]`).text(val * 1500);
+      $(`[data-total=${name}]`).text(val);
+    };
+
+    const getNumber = (evt) => {
+      const target = $(evt.target);
+      const counterInput = target.parent().find(".counter-enter");
+      let val = Number(counterInput.val());
+
+      if (val >= 0 && val <= 10) {
+        if (target.hasClass("counter__btn--plus") && val !== 10) {
+          val += 1;
+          counterInput.val(val);
+          getDataCounter(counterInput, val);
+        }
+
+        if (target.hasClass("counter__btn--minus") && val !== 0) {
+          val -= 1;
+          counterInput.val(val);
+          getDataCounter(counterInput, val);
+        }
+      }
+    };
+
+    $(".counter__btn--plus").on("click", (e) => {
+      getNumber(e);
+    });
+
+    $(".counter__btn--minus").on("click", (e) => {
+      getNumber(e);
+    });
+  }
+
+  if (document.querySelector("#input-personal-phone")) {
+    Inputmask("+7(999) 999-99-99").mask("#input-personal-phone");
+  }
+
+  if (document.querySelector(".finality__list")) {
+    const tabGetting = new Tabby(".finality__list");
+  }
+
+  if (document.querySelector(".getting-link")) {
+    $(".getting-link").on("click", (e) => {
+      const inputGetting = $(e.currentTarget).prev(".getting__input");
+
+      if (inputGetting.is(":checked")) {
+        inputGetting.prop("checked", false);
+      } else {
+        inputGetting.prop("checked", true);
+      }
+    });
+  }
+
+  function initBasketMap() {
+    const myMap = new ymaps.Map("tab-content__map", {
+      center: [52.2983873, 104.267158],
+      zoom: 12,
+      controls: [],
+    });
+
+    const placemark = new ymaps.Placemark(
+      [52.2983873, 104.267158],
+      {},
+      {
+        iconLayout: "default#image",
+        iconImageHref: "./img/pin.png",
+        iconImageSize: [30, 30],
+      }
+    );
+
+    myMap.geoObjects.add(placemark);
+
+    myMap.behaviors.disable("scrollZoom");
+  }
+
+  ymaps.ready(initBasketMap);
+
+  if (document.querySelector("#basket-form")) {
+    const sendForm = (e) => {
+      const form = e.target;
+      const data = $(form).serialize();
+      $.ajax({
+        url: "https://httpbin.org/anything",
+        method: "post",
+        dataType: "json",
+        data,
+        success() {
+          window.location = "complete.html";
+        },
+      });
+    };
+
+    $("#basket-form").on("submit", (e) => {
+      e.preventDefault();
+      sendForm(e);
     });
   }
 });

@@ -1,4 +1,4 @@
-extends ../templates/_main.pug
+extends ../templates/_main_map.pug
 include ../helpers/mixins.pug
 
 
@@ -31,13 +31,15 @@ block content
                 .ticket__bottom
                   .ticket__counter.counter
                     span.counter__btn.counter__btn--minus(role="button" tabindex="0")
-                    input.counter__input.counter-enter(type="text" form="basket-form" name=`counter-${n}`)
+                    input.counter__input.counter-enter(type="text" form="basket-form" name=`counter-${n}` placeholder="1" value="1")
                     span.counter__btn.counter__btn--plus(role="button" tabindex="0")
 
 
 
                   .ticket__price.price-section
-                    span.price-section__before(data-counter=`counter-${n}`) 6500 ₽
+                    span.price-section__before
+                      span(data-counter=`counter-${n}`) 6500
+                      |&ensp;₽
                     //span.price-section__after 2600 ₽
                     span.price-section__after.price-section__after--line 2600 ₽
                     //span.price-section__presence.price-section__presence--yes в наличии
@@ -57,19 +59,126 @@ block content
               .additional__box
                 span.additional__sub-title
                   h4 Установка межкомнатных дверей
-                span.additional__price
+                span.additional__cash
                   p Стоимость установки 1 стандартной двери - 800 ₽
 
                 .additional__counter-box
                   .additional__counter.counter
                     span.counter__btn.counter__btn--minus(role="button" tabindex="0")
-                    input.counter__input.counter-enter(type="text" form="basket-form" name="counter-additional")
+                    input.counter__input.counter-enter(type="text" form="basket-form" name="counter-additional" placeholder="1" value="1")
                     span.counter__btn.counter__btn--plus(role="button" tabindex="0")
 
                   .additional__price.price-section
                     span.price-section__text Итого за <span class="price-section__total" data-total="counter-additional">3</span> двери:
-                    span.price-section__before(data-counter="counter-additional") 6500 ₽
+                    span.price-section__before <span data-counter="counter-additional"> 6500</span> ₽
                     //span.price-section__after 2600 ₽
 
           .finality
+            h3.finality__title.display.display_size_big Оформление заказа
             form.finality__form#basket-form(action="#" method="post" name="basket-form")
+              fieldset.finality__fieldset.personal-info
+                p.finality__head Информация о вас
+                .finality__right.finality__label-box
+                  label.finality__label(for="input-personal-name")
+                    input.finality__input#input-personal-name(type="text" name="name" placeholder="Ваше имя, фамилия, отчество" requared)
+                  label.finality__label(for="input-personal-mail")
+                    input.finality__input#input-personal-mail(type="text" name="mail" placeholder="Ваш E-mail")
+                  label.finality__label(for="input-personal-phone")
+                    input.finality__input#input-personal-phone(type="text" name="phone" placeholder="Телефон" required)
+
+              fieldset.finality__fieldset
+                p.finality__head Способ получения
+                .finality__right.finality__tabs.finality-tabs
+
+                  ul.finality__list
+                    li.finality__item.getting
+                      label.getting__label(for="input-pickup" data-tabby-default)
+                        input.getting__input#input-pickup(type="radio" name="getting" value="pickup" checked)
+                        a.getting-link(href="#pickup" data-tabby-default)
+                          h4.getting__title Самовывоз
+                          span.getting__text Без ожидания доставки! Забрать можно со склада
+                          span.getting__price Бесплатно
+
+                    li.finality__item.getting
+                      label.getting__label(for="input-delivery")
+                        input.getting__input#input-delivery(type="radio" name="getting" value="delivery")
+                        a.getting-link(href="#delivery")
+                          h4.getting__title Доставка
+                          span.getting__text В удобный для вас день и интервал времени
+                          span.getting__price от 300 ₽
+
+                  .finality__tab-content.tab-content.pickup#pickup
+                    p.tab-content__text Забрать товары можно по адресу: <br>г. Иркутск, ТЦ "Мега Хоум" пав.24  Ул.Сергеева, 3Б/1,
+                    .tab-content__map
+                      .tab-content__inner#tab-content__map
+
+                  .finality__tab-content.tab-content.delivery#delivery
+                    ul.delivery__list
+                      li.delivery__item
+                        label.delivery__label.delivery__label--big(for="input-delivery-street")
+                          input.delivery__input#input-delivery-street(type="text" placeholder="Ваша улица" name="delivery-street")
+
+                      li.delivery__item
+                        label.delivery__label.delivery__label--small(for="input-delivery-hose")
+                          input.delivery__input#input-delivery-hose(type="text" placeholder="№ дома" name="delivery-hose")
+
+                        label.delivery__label.delivery__label--small(for="input-delivery-room")
+                          input.delivery__input#input-delivery-room(type="text" placeholder="№ квартиры" name="delivery-room")
+
+                      li.delivery__item.climb(data-accordion)
+
+                        input.climb__input#input-delivery-climb(type="checkbox" name="delivery-climb")
+                        label.climb__label.delivery__label--climb(for="input-delivery-climb" data-control)
+
+                          span.climb__slider(data-control)
+                          span.climb__box(data-control)
+                            h4.climb__title Требуется подьем
+                            p.climb__text Стоимость подьема 1 двери - 70 ₽,<br> при наличии лифта в расчет идет 2 этажа
+
+                        ul.climb__inner#climb(data-content)
+                          li.climb__item.floor
+                            p.floor__text Укажите на какой этаж&nbsp;будем поднимать
+                            .floor__counter.counter
+                              span.counter__btn.counter__btn--minus(role="button" tabindex="0")
+                              input.counter__input.counter-enter(type="text" name="counter-floor" placeholder="1" value="1")
+                              span.counter__btn.counter__btn--plus(role="button" tabindex="0")
+
+
+
+                          li.climb__item.climb__item--bg.climb-info
+                            figure.climb-info__wrap-img
+                            .climb-info__conent
+                              p.climb-info__text В вашем заказе <span>5</span> дверей
+                              p.climb-info__price Стоимость подьема на&nbsp;<span data-total="counter-floor">1</span>&nbsp;этаж <span>5</span> дверей: <span data-counter="counter-floor">700</span> ₽
+
+              fieldset.finality__fieldset.pay
+                p.finality__head Способ оплаты
+                .finality__right.pay__inner
+
+                  input.pay__input#input-pay-online(type="radio" name="pay" value="online" checked)
+                  label.pay__label(for="input-pay-online")
+                    span.pay__label-after
+                    span.pay__text Картой онлайн
+
+                  input.pay__input#input-pay-cash(type="radio" name="pay" value="cash")
+                  label.pay__label(for="input-pay-cash")
+
+                    span.pay__label-after
+                    span.pay__text Наличными при получении
+
+
+
+        .basket__column.basket__column--right.total-info.details
+          .total-info__inner
+            .details__title
+              h3 Ваша корзина
+
+            ul.details__list
+              each item in details_1
+                li.details__item(class=(item[0]==="Итоговая стоимость"?"details__item--total": ""))
+                  span.details__term
+                    p= item[0]
+                  span.details__description
+                    p= item[1]
+
+            button.total-info__btn.btn-fill(type="submit" form="basket-form") Оформить заказ

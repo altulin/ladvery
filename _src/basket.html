@@ -269,9 +269,9 @@
                   </div>
                   <div class="ticket__bottom">
                     <div class="ticket__counter counter"><span class="counter__btn counter__btn--minus" role="button" tabindex="0"></span>
-                      <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-1"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
+                      <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-1" placeholder="1" value="1"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
                     </div>
-                    <div class="ticket__price price-section"><span class="price-section__before" data-counter="counter-1">6500 ₽</span>
+                    <div class="ticket__price price-section"><span class="price-section__before"><span data-counter="counter-1">6500</span>&ensp;₽</span>
                       <!--span.price-section__after 2600 ₽--><span class="price-section__after price-section__after--line">2600 ₽</span>
                       <!--span.price-section__presence.price-section__presence--yes в наличии-->
                       <!--span.price-section__presence.price-section__presence--no под заказ--><span class="price-section__presence price-section__presence--few">мало на складе</span>
@@ -320,9 +320,9 @@
                   </div>
                   <div class="ticket__bottom">
                     <div class="ticket__counter counter"><span class="counter__btn counter__btn--minus" role="button" tabindex="0"></span>
-                      <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-2"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
+                      <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-2" placeholder="1" value="1"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
                     </div>
-                    <div class="ticket__price price-section"><span class="price-section__before" data-counter="counter-2">6500 ₽</span>
+                    <div class="ticket__price price-section"><span class="price-section__before"><span data-counter="counter-2">6500</span>&ensp;₽</span>
                       <!--span.price-section__after 2600 ₽--><span class="price-section__after price-section__after--line">2600 ₽</span>
                       <!--span.price-section__presence.price-section__presence--yes в наличии-->
                       <!--span.price-section__presence.price-section__presence--no под заказ--><span class="price-section__presence price-section__presence--few">мало на складе</span>
@@ -336,13 +336,13 @@
                 <div class="additional__inner">
                   <figure class="additional__wrap-img"></figure>
                   <div class="additional__box"><span class="additional__sub-title">
-                        <h4>Установка межкомнатных дверей</h4></span><span class="additional__price">
+                        <h4>Установка межкомнатных дверей</h4></span><span class="additional__cash">
                         <p>Стоимость установки 1 стандартной двери - 800 ₽</p></span>
                     <div class="additional__counter-box">
                       <div class="additional__counter counter"><span class="counter__btn counter__btn--minus" role="button" tabindex="0"></span>
-                        <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-additional"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
+                        <input class="counter__input counter-enter" type="text" form="basket-form" name="counter-additional" placeholder="1" value="1"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
                       </div>
-                      <div class="additional__price price-section"><span class="price-section__text">Итого за <span class="price-section__total" data-total="counter-additional">3</span> двери:</span><span class="price-section__before" data-counter="counter-additional">6500 ₽</span>
+                      <div class="additional__price price-section"><span class="price-section__text">Итого за <span class="price-section__total" data-total="counter-additional">3</span> двери:</span><span class="price-section__before"><span data-counter="counter-additional"> 6500</span> ₽</span>
                         <!--span.price-section__after 2600 ₽-->
                       </div>
                     </div>
@@ -350,7 +350,137 @@
                 </div>
               </div>
               <div class="finality">
-                <form class="finality__form" id="basket-form" action="#" method="post" name="basket-form"></form>
+                <h3 class="finality__title display display_size_big">Оформление заказа</h3>
+                <form class="finality__form" id="basket-form" action="#" method="post" name="basket-form">
+                  <fieldset class="finality__fieldset personal-info">
+                    <p class="finality__head">Информация о вас</p>
+                    <div class="finality__right finality__label-box">
+                      <label class="finality__label" for="input-personal-name">
+                        <input class="finality__input" id="input-personal-name" type="text" name="name" placeholder="Ваше имя, фамилия, отчество" requared>
+                      </label>
+                      <label class="finality__label" for="input-personal-mail">
+                        <input class="finality__input" id="input-personal-mail" type="text" name="mail" placeholder="Ваш E-mail">
+                      </label>
+                      <label class="finality__label" for="input-personal-phone">
+                        <input class="finality__input" id="input-personal-phone" type="text" name="phone" placeholder="Телефон" required>
+                      </label>
+                    </div>
+                  </fieldset>
+                  <fieldset class="finality__fieldset">
+                    <p class="finality__head">Способ получения</p>
+                    <div class="finality__right finality__tabs finality-tabs">
+                      <ul class="finality__list">
+                        <li class="finality__item getting">
+                          <label class="getting__label" for="input-pickup" data-tabby-default>
+                            <input class="getting__input" id="input-pickup" type="radio" name="getting" value="pickup" checked>
+                            <a class="getting-link" href="#pickup" data-tabby-default>
+                              <h4 class="getting__title">Самовывоз</h4><span class="getting__text">Без ожидания доставки! Забрать можно со склада</span><span class="getting__price">Бесплатно</span>
+                            </a>
+                          </label>
+                        </li>
+                        <li class="finality__item getting">
+                          <label class="getting__label" for="input-delivery">
+                            <input class="getting__input" id="input-delivery" type="radio" name="getting" value="delivery">
+                            <a class="getting-link" href="#delivery">
+                              <h4 class="getting__title">Доставка</h4><span class="getting__text">В удобный для вас день и интервал времени</span><span class="getting__price">от 300 ₽</span>
+                            </a>
+                          </label>
+                        </li>
+                      </ul>
+                      <div class="finality__tab-content tab-content pickup" id="pickup">
+                        <p class="tab-content__text">Забрать товары можно по адресу:
+                          <br>г. Иркутск, ТЦ "Мега Хоум" пав.24 Ул.Сергеева, 3Б/1,</p>
+                        <div class="tab-content__map">
+                          <div class="tab-content__inner" id="tab-content__map"></div>
+                        </div>
+                      </div>
+                      <div class="finality__tab-content tab-content delivery" id="delivery">
+                        <ul class="delivery__list">
+                          <li class="delivery__item">
+                            <label class="delivery__label delivery__label--big" for="input-delivery-street">
+                              <input class="delivery__input" id="input-delivery-street" type="text" placeholder="Ваша улица" name="delivery-street">
+                            </label>
+                          </li>
+                          <li class="delivery__item">
+                            <label class="delivery__label delivery__label--small" for="input-delivery-hose">
+                              <input class="delivery__input" id="input-delivery-hose" type="text" placeholder="№ дома" name="delivery-hose">
+                            </label>
+                            <label class="delivery__label delivery__label--small" for="input-delivery-room">
+                              <input class="delivery__input" id="input-delivery-room" type="text" placeholder="№ квартиры" name="delivery-room">
+                            </label>
+                          </li>
+                          <li class="delivery__item climb" data-accordion>
+                            <input class="climb__input" id="input-delivery-climb" type="checkbox" name="delivery-climb">
+                            <label class="climb__label delivery__label--climb" for="input-delivery-climb" data-control><span class="climb__slider" data-control></span><span class="climb__box" data-control>
+                                  <h4 class="climb__title">Требуется подьем</h4>
+                                  <p class="climb__text">Стоимость подьема 1 двери - 70 ₽,<br> при наличии лифта в расчет идет 2 этажа</p></span>
+                            </label>
+                            <ul class="climb__inner" id="climb" data-content>
+                              <li class="climb__item floor">
+                                <p class="floor__text">Укажите на какой этаж&nbsp;будем поднимать</p>
+                                <div class="floor__counter counter"><span class="counter__btn counter__btn--minus" role="button" tabindex="0"></span>
+                                  <input class="counter__input counter-enter" type="text" name="counter-floor" placeholder="1" value="1"><span class="counter__btn counter__btn--plus" role="button" tabindex="0"></span>
+                                </div>
+                              </li>
+                              <li class="climb__item climb__item--bg climb-info">
+                                <figure class="climb-info__wrap-img"></figure>
+                                <div class="climb-info__conent">
+                                  <p class="climb-info__text">В вашем заказе <span>5</span> дверей</p>
+                                  <p class="climb-info__price">Стоимость подьема на&nbsp;<span data-total="counter-floor">1</span>&nbsp;этаж <span>5</span> дверей: <span data-counter="counter-floor">700</span> ₽</p>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="finality__fieldset pay">
+                    <p class="finality__head">Способ оплаты</p>
+                    <div class="finality__right pay__inner">
+                      <input class="pay__input" id="input-pay-online" type="radio" name="pay" value="online" checked>
+                      <label class="pay__label" for="input-pay-online"><span class="pay__label-after"></span><span class="pay__text">Картой онлайн</span>
+                      </label>
+                      <input class="pay__input" id="input-pay-cash" type="radio" name="pay" value="cash">
+                      <label class="pay__label" for="input-pay-cash"><span class="pay__label-after"></span><span class="pay__text">Наличными при получении</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+            <div class="basket__column basket__column--right total-info details">
+              <div class="total-info__inner">
+                <div class="details__title">
+                  <h3>Ваша корзина</h3>
+                </div>
+                <ul class="details__list">
+                  <li class="details__item"><span class="details__term">
+                        <p>Товары (3)</p></span><span class="details__description">
+                        <p>55 000 ₽</p></span>
+                  </li>
+                  <li class="details__item"><span class="details__term">
+                        <p>Скидка</p></span><span class="details__description">
+                        <p>-15 000₽</p></span>
+                  </li>
+                  <li class="details__item"><span class="details__term">
+                        <p>Доставка (3шт)</p></span><span class="details__description">
+                        <p>440 ₽</p></span>
+                  </li>
+                  <li class="details__item"><span class="details__term">
+                        <p>Подьем (5этажей)</p></span><span class="details__description">
+                        <p>560 ₽</p></span>
+                  </li>
+                  <li class="details__item"><span class="details__term">
+                        <p>Установка</p></span><span class="details__description">
+                        <p>1 500 ₽</p></span>
+                  </li>
+                  <li class="details__item details__item--total"><span class="details__term">
+                        <p>Итоговая стоимость</p></span><span class="details__description">
+                        <p>42 500 ₽</p></span>
+                  </li>
+                </ul>
+                <button class="total-info__btn btn-fill" type="submit" form="basket-form">Оформить заказ</button>
               </div>
             </div>
           </div>
@@ -420,6 +550,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=6613c9b6-e7ff-4c35-b08c-1ba110eebf35&amp;lang=ru_RU" type="text/javascript"></script>
     <script src="/js/script.js"></script>
   </div>
 </body>
