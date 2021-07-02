@@ -1267,20 +1267,9 @@ li {
 }
 
 .sale__btn-rect {
-  display: none;
+  display: block;
   margin: 15px auto 0 auto;
 }
-
-/* .sale__controls {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 .sale__control {
   position: absolute;

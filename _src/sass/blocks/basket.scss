@@ -1,10 +1,17 @@
 .basket {
+  @include mw($dt) {
+    margin-bottom: 80px;
+  }
   &__title {
     margin-bottom: 40px;
   }
 
   &__content {
     display: flex;
+
+    @include mw($dt) {
+      flex-direction: column;
+    }
   }
 
   &__column {
@@ -16,6 +23,10 @@
     &--right {
       margin-left: 30px;
       min-width: 300px;
+
+      @include mw($dt) {
+        margin-left: 0;
+      }
     }
   }
 
@@ -27,6 +38,11 @@
     flex-wrap: wrap;
     position: relative;
     padding-bottom: 20px;
+
+    @include mw($ph) {
+      padding-top: 55px;
+      padding-bottom: 40px;
+    }
 
     & + li {
       margin-top: 20px;
@@ -42,6 +58,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mw($tb) {
+      flex-direction: column;
+      // align-items: flex-start;
+    }
   }
 
   &__price {
@@ -49,8 +70,30 @@
     margin-left: 40px;
     align-items: center;
 
+    @include mw($tb) {
+      margin-left: 0;
+      width: auto;
+    }
+
     & .price-section__before {
       font-size: 32px;
+    }
+  }
+
+  & .price-section__presence {
+    @include mw($tb) {
+      margin-left: 20px;
+    }
+
+    @include mw($ph) {
+      // width: auto;
+      // margin-top: 0;
+    }
+  }
+
+  &__counter {
+    @include mw($tb) {
+      margin-bottom: 30px;
     }
   }
 
@@ -66,6 +109,11 @@
     border: none;
     transition: $transition;
     cursor: pointer;
+
+    @include mw($ph) {
+      top: 20px;
+      right: 20px;
+    }
 
     @include hocus() {
       color: rgba(#b6b6b6, 0.5);
@@ -143,6 +191,13 @@
     border-radius: 10px;
     padding: 40px;
     display: flex;
+
+    @include mw($ph) {
+      flex-direction: column;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   &__wrap-img {
@@ -154,11 +209,24 @@
     background-position: center center;
     background-size: 73px 86px;
     background-color: #f2f3f3;
+    flex-shrink: 0;
+
+    @include mw($ph) {
+      margin-bottom: 20px;
+    }
   }
 
   &__box {
     margin-left: 40px;
     flex-grow: 1;
+
+    @include mw($ph) {
+      margin-left: 0;
+
+      & .price-section__text {
+        margin-bottom: 16px;
+      }
+    }
   }
 
   &__sub-title {
@@ -168,6 +236,10 @@
     color: #000000;
     margin-bottom: 10px;
     display: block;
+
+    @include mw($tb) {
+      text-align: center;
+    }
   }
 
   &__cash {
@@ -178,6 +250,10 @@
     color: #b6b6b6;
     display: block;
     margin-bottom: 20px;
+
+    @include mw($tb) {
+      text-align: center;
+    }
   }
 
   &__counter-box {
@@ -185,6 +261,10 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    @include mw($tb) {
+      flex-direction: column;
+    }
   }
 
   & .price-section__before {
@@ -194,6 +274,10 @@
 
   &__counter {
     width: 230px;
+
+    @include mw($tb) {
+      margin-bottom: 30px;
+    }
 
     & .counter__input {
       width: 100px;
@@ -223,6 +307,12 @@
     & + fieldset {
       border-top: 1px solid rgba(#000000, 0.1);
     }
+
+    @include mw($tb) {
+      padding-left: 20px;
+      padding-right: 20px;
+      flex-direction: column;
+    }
   }
 
   &__head {
@@ -230,6 +320,10 @@
     line-height: 20px;
     letter-spacing: -0.05em;
     color: #000000;
+
+    @include mw($tb) {
+      margin-bottom: 30px;
+    }
   }
 
   &__right {
@@ -275,9 +369,21 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
+
+    @include mw($ph) {
+      flex-direction: column;
+    }
   }
   &__item {
     width: calc(50% - (17px / 2));
+
+    @include mw($ph) {
+      width: auto;
+
+      & + li {
+        margin-top: 20px;
+      }
+    }
   }
 }
 
@@ -479,12 +585,20 @@
   margin-bottom: 20px;
   align-items: center;
 
+  @include mw($ph) {
+    flex-direction: column;
+  }
+
   &__text {
     font-weight: 500;
     font-size: 16px;
     line-height: 18px;
     letter-spacing: -0.05em;
     color: #424242;
+
+    @include mw($ph) {
+      margin-bottom: 20px;
+    }
   }
 
   & .counter__input {
@@ -505,6 +619,10 @@
   justify-content: space-around;
   align-items: center;
 
+  @include mw($ph) {
+    flex-direction: column;
+  }
+
   &__wrap-img {
     width: 170px;
     height: 55px;
@@ -512,10 +630,19 @@
     background-size: 46px 55px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+
+    @include mw($ph) {
+      margin-bottom: 20px;
+    }
   }
 
   &__conent {
     width: 56%;
+
+    @include mw($ph) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__text {
@@ -530,7 +657,7 @@
   &__price {
     font-weight: 500;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 22px;
     letter-spacing: -0.05em;
     color: #424242;
   }
@@ -602,9 +729,27 @@
   }
 
   &__inner {
-    max-width: 373px;
+    width: 300px;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.07);
     border-radius: 10px;
     padding-bottom: 40px;
+
+    @include mw($tb) {
+      width: 100%;
+    }
+
+    &.stuck {
+      position: fixed;
+      top: 10px;
+      right: calc((100vw - 1200px) / 2 + 82px);
+
+      @media (max-width: 1240px) {
+        right: 20px;
+      }
+    }
   }
+}
+
+* {
+  // outline: 1px solid tomato;
 }

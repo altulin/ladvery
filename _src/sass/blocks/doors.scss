@@ -1,0 +1,196 @@
+.esse {
+  margin-bottom: 120px;
+
+  @include mw($dt) {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include mw($dt) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__wrap-img {
+    max-width: 500px;
+    flex-grow: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 20px;
+
+    @include mw($dt) {
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__content {
+    max-width: 523px;
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mw($dt) {
+      max-width: none;
+    }
+
+    & p {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: -0.05em;
+      color: #424242;
+      font-weight: normal;
+
+      & + p {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.kind {
+  margin-bottom: 120px;
+
+  & .sale__control {
+    background-color: transparent;
+    top: 200px;
+  }
+
+  @include mw($dt) {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    & p {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: -0.05em;
+      color: #424242;
+    }
+  }
+}
+
+.doors-slider {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  & h3 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: -0.05em;
+    color: #424242;
+    margin-bottom: 20px;
+  }
+
+  & p {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.05em;
+    color: #424242;
+    font-weight: normal;
+  }
+}
+
+.installation {
+  margin-bottom: 120px;
+
+  & .sale__control {
+    background-color: transparent;
+    top: 200px;
+  }
+
+  @include mw($dt) {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    & p {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: -0.05em;
+      color: #424242;
+    }
+  }
+}
+
+.examples {
+  margin-bottom: 120px;
+
+  & .sale__control {
+    background-color: transparent;
+    top: 200px;
+  }
+
+  @include mw($dt) {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  & .doors-slider {
+    &__item {
+      width: calc((100% / 3) - (64px / 3));
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 32px;
+
+      @include mw($tb) {
+        padding-left: 13px;
+        padding-right: 13px;
+        margin-bottom: 0px;
+      }
+    }
+
+    &__list {
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @include mw($tb) {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}

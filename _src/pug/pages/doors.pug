@@ -1,0 +1,97 @@
+extends ../templates/_main.pug
+include ../helpers/mixins.pug
+
+
+block content
+  include ../modules/_breadcrumbs
+
+  section.esse.container
+    h1.esse__title.display.display_size_big Раздвижные двери (двери-купе)
+    .esse__inner
+      figure.esse__wrap-img
+        +img-retina(`esse`, `jpg`, `Раздвижные двери`, `esse__img`, `500`, `500`)
+
+      .esse__content
+        p Раздвижные межкомнатные двери — это полотна, которые исполняют функцию обычных распашных, при этом значительно экономят полезное пространство в комнатах и помещениях.
+
+        p Существует множество вариантов монтажа подобных конструкций, например, самый популярный из них: раздвижная дверь вдоль стены с креплением направляющей чуть выше дверного проема, при этом в закрытом положении дверь должна полностью перекрывать проем, который в свою очередь рекомендуется обрамить добором и наличником из того же материала, что и сама дверь. При этом по ценам такой способ открывания не значительно дороже распашного варианта.
+
+        p Сегодня раздвижной тип дверей служит отличной альтернативой классическому варианту с использованием распашных створок. Порой, это единственное решение для возможности выделения функционально значимых зон. Ситуация справедлива в случае стесненных условий малогабаритных квартир или наличия узких коридоров.
+
+
+  section.kind.container
+    h2.kind__title.display.display_size_big Какие раздвижные системы бывают
+    .kind__inner
+      .kind__text
+        p Компоновки раздвижных дверей могут быть очень простыми и состоять из одного полотна, передвигающегося по единственной направляющей, а могут представлять более сложную систему из четырех створок, расположенных в разных вариациях. Среди основных и наиболее распространенных типов раздвижных конструкций выделяют
+
+      .kind__slider.doors-slider.swiper-container
+
+        ul.doors-slider__list.swiper-wrapper
+          each item,i in doors_slider
+            li.doors-slider__item.swiper-slide
+              //- a.doors-slider__link(href=`/img/doors-slider-${i+1}-large.jpg` data-gallery="gallery1")
+              figure.doors-slider__link
+                +img-retina(`doors-slider-${i+1}`, `jpg`, `Раздвижные двери`, `doors-slider__img`, `373`, `373`)
+
+              h3= item[0]
+              p= item[1]
+
+        button.slider-control.slider-control_prev.sale__control.sale__control_prev.sale__control_prev-kind
+          svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+            use(href='/img/sprite.svg#icon-arrow-left')
+
+        button.slider-control.slider-control_next.sale__control.sale__control_next.sale__control_next-kind
+          svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+            use(href='/img/sprite.svg#icon-arrow-right')
+
+
+  section.installation.container
+    h2.installation__title.display.display_size_big Установка межкомнатных раздвижных дверей
+    .installation__inner
+      .installation__text
+        p Существует три основных способа установки раздвижных дверей. К ним относятся:
+        p Главное условие благополучной и долговечной эксплуатации раздвижной системы состоит в достаточности несущей способности конструкции, на которую производится ее фиксация. Именно поэтому в качестве основы не могут быть использованы перегородки из облегченных конструкций (гипсокартон, дерево).
+
+      .installation__slider.doors-slider.swiper-container
+
+        ul.doors-slider__list.swiper-wrapper
+          each item,i in doors_slider
+            li.doors-slider__item.swiper-slide
+              //- a.doors-slider__link(href=`/img/doors-slider-${i+1}-large.jpg` data-gallery="gallery2")
+              figure.doors-slider__link
+                +img-retina(`doors-slider-${i+1}`, `jpg`, `Раздвижные двери`, `doors-slider__img`, `373`, `373`)
+
+              p= item[1]
+
+        button.slider-control.slider-control_prev.sale__control.sale__control_prev.sale__control_prev-installation
+          svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+            use(href='/img/sprite.svg#icon-arrow-left')
+
+        button.slider-control.slider-control_next.sale__control.sale__control_next.sale__control_next-installation
+          svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+            use(href='/img/sprite.svg#icon-arrow-right')
+
+  section.examples.container
+    h2.examples__title.display.display.display_size_big.display_center Примеры наших работ <br>по установке раздвижных дверей
+
+    .examples__slider.doors-slider.swiper-container
+
+      ul.doors-slider__list.swiper-wrapper
+        while n < 3
+          -n++
+            each item,i in doors_slider
+              li.doors-slider__item.swiper-slide
+
+                //- figure.doors-slider__link
+                a.doors-slider__link-lightbox(href=`/img/doors-slider-${i+1}-large.jpg` data-gallery="gallery3")
+
+                  +img-retina(`doors-slider-${i+1}`, `jpg`, `Раздвижные двери`, `doors-slider__img`, `373`, `373`)
+
+      button.slider-control.slider-control_prev.sale__control.sale__control_prev.sale__control_prev-examples
+        svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+          use(href='/img/sprite.svg#icon-arrow-left')
+
+      button.slider-control.slider-control_next.sale__control.sale__control_next.sale__control_next-examples
+        svg.icon.slider-control__icon(width='20' height='11' viewBox='0 0 20 11')
+          use(href='/img/sprite.svg#icon-arrow-right')

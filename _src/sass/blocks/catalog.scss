@@ -459,7 +459,7 @@
         padding-top: 20px;
       }
 
-      &__thumb {
+      &__img-link {
         margin-bottom: 30px;
       }
 
@@ -831,6 +831,7 @@ button,
 select,
 a,
 textarea,
-span {
+span,
+label {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

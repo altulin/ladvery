@@ -153,11 +153,12 @@ block content
               li.products__item(class=(n===2?'products__item--new': ''))
 
                 article.sale-card
-                  img.sale-card__thumb(src='img/ds1.jpg' width='93' height='195' alt='Дверь Агата')
+                  a.sale-card__img-link(href="/product.html")
+                    img.sale-card__thumb(src='/img/ds1.jpg' width='93' height='195' alt='Дверь Агата')
                   span.sale-card__text
                     .sale-card__head
                       h3.sale-card__title
-                        a(href='product.html') Агата
+                        a(href='/product.html') Агата
                       span.sale-card__desc
                         p Тон 30 Шоколад шпон ясень
 
@@ -176,13 +177,13 @@ block content
 
                   ul.sale-card__colors
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #0A0A0A;" data-image='img/ds2.jpg' data-color='Тон 10 Рустик шпон дуб' tabindex="0")
+                      label.sale-card__colors-label(style="background-color: #0A0A0A;" data-image='/img/ds2.jpg' data-color='Тон 10 Рустик шпон дуб' tabindex="0")
                         input.sale-card__colors-input(type="text")
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #E8F7C8;" data-image='img/ds1.jpg' data-color='Тон 30 Шоколад шпон ясень' tabindex="0")
+                      label.sale-card__colors-label(style="background-color: #E8F7C8;" data-image='/img/ds1.jpg' data-color='Тон 30 Шоколад шпон ясень' tabindex="0")
                         input.sale-card__colors-input(type="text")
                     li.sale-card__colors-item
-                      label.sale-card__colors-label(style="background-color: #FF3232;" data-image='img/ds2.jpg' data-color='Тон 10 Рустик шпон дуб' tabindex="0")
+                      label.sale-card__colors-label(style="background-color: #FF3232;" data-image='/img/ds2.jpg' data-color='Тон 10 Рустик шпон дуб' tabindex="0")
                         input.sale-card__colors-input(type="text")
 
                   .sale-card__wrap-link

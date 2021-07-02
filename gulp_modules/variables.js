@@ -15,6 +15,7 @@ const plugunsJsUsed = [
   `jquery_modal_js`,
   `tabby_js`,
   `inputmask_js`,
+  `glightbox_js`,
   `myJsLibs`,
   `myJsFile`,
 ];
@@ -23,6 +24,7 @@ const plugunsCssUsed = [
   // `mmenu_css`,
   // `swiper_css`,
   `jquery_modal_css`,
+  `glightbox_css`,
   `myCssLibs`,
   `myCssFile`,
 ];
@@ -53,7 +55,7 @@ const plugunsJs = new Map([
 const plugunsCss = new Map([
   [`normalize_css`, `node_modules/normalize.css/normalize.css`],
   [`jquery_modal_css`, `node_modules/jquery-modal/jquery.modal.min.css`],
-  [`glightbox_js`, `node_modules/glightbox/dist/css/glightbox.min.css`],
+  [`glightbox_css`, `node_modules/glightbox/dist/css/glightbox.min.css`],
   [`mmenu_css`, `node_modules/mmenu-light/dist/mmenu-light.css`],
   [
     `jquery_formstyler_css`,
