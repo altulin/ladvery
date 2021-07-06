@@ -38,7 +38,8 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "usePrettierrc": false
       }
     ],
     "import/no-named-as-default": "off",

@@ -4098,6 +4098,32 @@ label {
   align-items: center;
 }
 
+.configuration-tabs__label--color .heapBox .holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.configuration-tabs__label--color .heapOption a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
 .configuration-tabs__label + label {
   margin-top: 10px;
 }
@@ -4509,6 +4535,15 @@ label {
   text-align: left;
 }
 
+.sample {
+  border-radius: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+  margin-right: 10px;
+}
+
 .handling {
   margin-bottom: 100px;
 }
@@ -4613,6 +4648,22 @@ label {
   letter-spacing: -0.05em;
   color: #424242;
   text-align: center;
+}
+
+.information__description--color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.information__color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .details__title {

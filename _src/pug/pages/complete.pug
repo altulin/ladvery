@@ -26,10 +26,21 @@ block content
                 ul.information__list
                   each item in information
                     li.information__item
-                      span.information__term
-                        p= item[0]
-                      span.information__description
-                        p= item[1]
+
+
+                      if item[0] === 'Цвет'
+
+                        span.information__term
+                          p= item[0]
+                        span.information__description.information__description--color
+                          span.information__color(style="background-color: #424242;")
+                          p= item[1]
+
+                      else
+                        span.information__term
+                          p= item[0]
+                        span.information__description
+                          p= item[1]
           -n=0
 
         .handling__details.details

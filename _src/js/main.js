@@ -318,10 +318,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const colorsList = new Map([
+    ["#0A0A0A", "/img/door-1.png"],
+    ["#E8F7C8", "/img/door-1.png"],
+    ["#0A0A0A", "/img/door-1.png"],
+  ]);
+
+  let createColorElem;
+
   if (document.querySelector(".configuration-tabs__select")) {
     $(".configuration-tabs__select").heapbox({
       effect: {
         speed: "fast",
+      },
+      onChange(value, sourceElement) {
+        if (
+          sourceElement.parent().hasClass("configuration-tabs__label--color")
+        ) {
+          createColorElem(".configuration-tabs__label--color .holder");
+          $(".view__img").attr("src", colorsList.get(value));
+        }
       },
     });
   }
@@ -379,12 +395,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#configuration-form").on("submit", (e) => {
       e.preventDefault();
       sendForm(e);
-    });
-  }
-
-  if (document.querySelector(".configuration-tabs__label--color")) {
-    $(".configuration-tabs__label--color .heapOption").map(function (i, item) {
-      // console.log($(item).find("a").css("background-color", "red"));
     });
   }
 
@@ -576,5 +586,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const kind_lightbox = GLightbox({
       selector: ".doors-slider__link-lightbox",
     });
+  }
+
+  const selectItem = document.querySelector(
+    ".configuration-tabs__label--color"
+  );
+
+  const getColor = (element) => {
+    return element.attributes.rel.value;
+  };
+
+  createColorElem = (parentClass) => {
+    const parent = selectItem.querySelectorAll(parentClass);
+
+    for (const item of parent) {
+      const colorElement = document.createElement("span");
+      colorElement.classList.add("sample");
+      colorElement.style.backgroundColor = getColor(item);
+      item.appendChild(colorElement);
+    }
+  };
+
+  if (selectItem) {
+    createColorElem(".holder");
+    createColorElem(".heapOption a");
   }
 });

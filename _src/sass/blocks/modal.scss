@@ -83,6 +83,7 @@
     margin-bottom: 30px;
   }
 }
+
 .configuration-tabs {
   &__item {
     width: calc(50% - (15px / 2));
@@ -125,12 +126,25 @@
     justify-content: space-between;
     align-items: center;
 
+    &--color .heapBox .holder {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+    &--color .heapOption a {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+
     @include mw($ph) {
       flex-direction: column;
       align-items: stretch;
     }
 
-    & + label {
+    &+label {
       margin-top: 10px;
 
       @include mw($ph) {
@@ -222,7 +236,7 @@
     }
 
     & .heapOption {
-      & + li {
+      &+li {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
       }
     }
@@ -299,9 +313,11 @@
     &--yes {
       color: #6ad659;
     }
+
     &--no {
       color: #f24a41;
     }
+
     &--few {
       color: #faab63;
     }
@@ -316,6 +332,7 @@
 
     &--line {
       position: relative;
+
       &::after {
         content: "";
         display: block;
@@ -330,6 +347,7 @@
     }
   }
 }
+
 .view {
   position: relative;
 
@@ -413,6 +431,7 @@
     height: 419px;
   }
 }
+
 .preview {
   display: flex;
   justify-content: space-between;
@@ -467,6 +486,7 @@
     }
   }
 }
+
 .click {
   margin-top: 30px;
   width: 100%;
@@ -551,10 +571,11 @@
       flex-direction: column;
     }
 
-    & + li {
+    &+li {
       margin-top: 40px;
     }
   }
+
   &__term {
     font-weight: 500;
     font-size: 16px;
@@ -566,6 +587,7 @@
       margin-bottom: 10px;
     }
   }
+
   &__description {
     font-weight: 500;
     font-size: 16px;
@@ -576,4 +598,14 @@
     max-width: 200px;
     text-align: left;
   }
+}
+
+.sample {
+  border-radius: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+  margin-right: 10px;
+
 }

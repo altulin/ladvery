@@ -3,4 +3,5 @@ node_modules
 /.git
 /_src/js/script.js
 /_src/js/script.min.js
+# /_src/js/main.js
 /*_dist/
